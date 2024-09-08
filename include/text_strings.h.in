@@ -1,0 +1,111 @@
+#ifndef TEXT_STRINGS_H
+#define TEXT_STRINGS_H
+
+#define TEXT_ZERO _("0")
+#define TEXT_COIN _("$")
+#define TEXT_STAR _("★")
+#define TEXT_COIN_X _("$×")
+#define TEXT_STAR_X _("★×")
+#define TEXT_VARIABLE_X _("×")
+#define TEXT_UNFILLED_STAR _("☆")
+#define TEXT_4DASHES _("----")
+
+// ONLY IN RUSSIAN VERSION
+
+/**
+ * Меню выбора файла
+ */
+// Выбор файла
+#define TEXT_NEW _("~Н~О~В~Ы~Й")
+#define TEXT_SELECT_FILE _("~В~Ы~Б~Р~А~Т~Ь ~Ф~А~Й~Л")
+#define TEXT_CHECK_FILE _("~П~О~К~А~З~А~Т~Ь ~С~Ч~Ё~Т")
+#define TEXT_COPY_FILE _("~К~О~П~И~Р~О~В~А~Т~Ь ~Ф~А~Й~Л")
+#define TEXT_ERASE_FILE _("~С~Т~Е~Р~Е~Т~Ь ~Ф~А~Й~Л")
+#define TEXT_SOUND_SELECT _("~В~Ы~Б~Р~А~Т~Ь ~З~В~У~К")
+#define TEXT_FILE_MARIO_A _("МАРИО А")
+#define TEXT_FILE_MARIO_B _("МАРИО Б")
+#define TEXT_FILE_MARIO_C _("МАРИО В")
+#define TEXT_FILE_MARIO_D _("МАРИО Г")
+
+// Кнопки в меню выбора файла
+#define TEXT_SCORE _("СЧЁТ")
+#define TEXT_COPY _("КОПИРОВАТЬ")
+#define TEXT_ERASE _("СТЕРЕТЬ")
+
+// Выбор звука
+#define TEXT_STEREO _("СТЕРЕО")
+#define TEXT_MONO _("МОНО")
+#define TEXT_HEADSET _("НАУШНИКИ")
+
+// Существуют сохранённые данные, или нет?
+#define TEXT_SAVED_DATA_EXISTS _("СОХРАНЁННЫЕ ДАННЫЕ СУЩЕСТВУЮТ")
+#define TEXT_NO_SAVED_DATA_EXISTS _("СОХРАНЁННЫЕ ДАННЫЕ НЕ СУЩЕСТВУЮТ")
+
+// Кнопки внутри меню
+#define TEXT_RETURN _("ВЕРНУТЬСЯ")
+#define TEXT_CHECK_SCORE _("ПОКАЗАТЬ СЧЁТ")
+#define TEXT_COPY_FILE_BUTTON _("КОПИР. ФАЙЛ")
+#define TEXT_ERASE_FILE_BUTTON _("СТЕРЕТЬ ФАЙЛ")
+
+// Меню счёта
+#define TEXT_MARIO _("~М~А~Р~И~О")
+#define TEXT_HI_SCORE _("РЕКОРД")
+#define TEXT_MY_SCORE _("МОЙ СЧЁТ")
+#define TEXT_SCORE_MARIO_A _("☺А")
+#define TEXT_SCORE_MARIO_B _("☺Б")
+#define TEXT_SCORE_MARIO_C _("☺В")
+#define TEXT_SCORE_MARIO_D _("☺Г")
+
+// Меню копирования файла
+#define TEXT_COPY_IT_TO_WHERE _("СКОПИРОВАТЬ КУДА?")
+#define TEXT_COPYING_COMPLETED _("КОПИРОВАНИЕ ЗАВЕРШЕНО")
+#define TEXT_NO_FILE_TO_COPY_FROM _("НЕТ ПУСТОГО ФАЙЛА")
+
+// Меню стирания файла
+#define TEXT_SURE _("УВЕРЕНЫ?")
+#define TEXT_YES _("ДА")
+#define TEXT_NO _("НЕТ")
+#define TEXT_FILE_MARIO_A_JUST_ERASED _("МАРИО А ПРОСТО СТЁРТО")
+
+/**
+ * Игровое меню
+ */
+// В игре
+#define TEXT_COURSE _("КУРС")
+#define TEXT_MYSCORE _("МОЙ СЧЁТ")
+#define TEXT_CONTINUE _("ПРОДОЛЖИТЬ")
+#define TEXT_EXIT_COURSE _("ВЫЙТИ ИЗ КУРСА")
+#define TEXT_CAMERA_ANGLE_R _("УСТАНОВИТЬ РАКУРС КАМЕРЫ С [R]")
+#define TEXT_PAUSE _("~П~А~У~З~А")
+
+// Настройки камеры
+#define TEXT_LAKITU_MARIO _("ЛАКИТУ + МАРИО")
+#define TEXT_LAKITU_STOP _("ЛАКИТУ + СТОП")
+#define TEXT_NORMAL_UPCLOSE __("(ОБЫЧНЫЙ)(ВБЛИЗИ)")
+#define TEXT_NORMAL_FIXED __("(ОБЫЧНЫЙ)(ФИКСИР.)")
+
+// Курс пройден
+#define TEXT_HUD_CONGRATULATIONS _("~П~О~З~Д~Р~А~В~Л~Я~Е~М")
+#define TEXT_CATCH _("") // Не используется
+#define TEXT_CLEAR _("ПРОЙДЕН")
+#define TEXT_HUD_HI_SCORE _("~Р~Е~К~О~Р~Д")
+
+// Настройки сохранения
+#define TEXT_SAVE_AND_CONTINUE _("СОХРАНИТЬ И ПРОДОЛЖИТЬ")
+#define TEXT_SAVE_AND_QUIT _("СОХРАНИТЬ И ВЫЙТИ")
+#define TEXT_CONTINUE_WITHOUT_SAVING _("ПРОДОЛЖИТЬ БЕЗ СОХРАНЕНИЯ")
+
+/**
+ * Субтитры в концовке игры
+ */
+#define TEXT_FILE_MARIO_EXCLAMATION _("Марио!")
+#define TEXT_POWER_STARS_RESTORED __("Сила Звёзд возвратилась в замок...")
+#define TEXT_THANKS_TO_YOU __("...и всё это благодаря вам!")
+#define TEXT_THANK_YOU_MARIO __("Спасибо, Марио!")
+#define TEXT_SOMETHING_SPECIAL __("Мы должны сделать для вас что-то особенное...")
+#define TEXT_LISTEN_EVERYBODY _("Слушайте все,")
+#define TEXT_LETS_HAVE_CAKE _("давайте испечём вкусный торт...")
+#define TEXT_FOR_MARIO _("...для Марио...")
+#define TEXT_FILE_MARIO_QUESTION _("Марио!")
+
+#endif
