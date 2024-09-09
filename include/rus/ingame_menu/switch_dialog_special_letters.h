@@ -16,5 +16,11 @@ case DIALOG_CHAR_CYRILLIC_SMALL_IO: // ё
 case DIALOG_CHANGE_POSITION_Y_DOWN:
 	change_dialog_position_y_down(lineNum, &linePos, linesPerBox, xMatrix, lowerBound);
 	break;
+case DIALOG_CHANGE_SIMULFIX_IN_WORD_ZVEZDA:
+	render_dialog_char_morpheme_count_rus(ASCII_TO_DIALOG('e'), ASCII_TO_DIALOG('e'), DIALOG_CHAR_CYRILLIC_SMALL_IO, lineNum, &linePos, linesPerBox, xMatrix, lowerBound);
+	break;
+case DIALOG_CHANGE_SUFFIX_IN_WORD_ZVEZDA:
+	render_dialog_char_morpheme_count_rus(ASCII_TO_DIALOG('a'), DIALOG_CHAR_CYRILLIC_SMALL_YERU, DIALOG_CHAR_EMPTY, lineNum, &linePos, linesPerBox, xMatrix, lowerBound);
+	break;
 
 #endif // This will be used in "src/game/ingame_menu.c"
