@@ -1,5 +1,5 @@
 // Thumbnail data base files
-*.db
+Thumbs.db
 
 // Backup files
 *.bak
