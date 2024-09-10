@@ -49,7 +49,7 @@ void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP
 		render_generic_char(DIALOG_CHAR_CYRILLIC_CAPITAL_IO);
 		create_dl_translation_matrix(MENU_MTX_NOPUSH, (gDialogCharWidths[ASCII_TO_DIALOG('e')]), 0, 0);
 		linePos += gDialogCharWidths[ASCII_TO_DIALOG('e')];
-	} else if (curLetter != DIALOG_CHAR_EMPTY) {
+	} else if (curLetter != DIALOG_CHAR_NONE) {
 		render_generic_char(curLetter);
 		create_dl_translation_matrix(MENU_MTX_NOPUSH, (gDialogCharWidths[curLetter]), 0, 0);
 		linePos += gDialogCharWidths[curLetter];
