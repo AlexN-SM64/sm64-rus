@@ -58,4 +58,23 @@ void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP
 #include <rus/render_dialog_char_options_end.h>
 }
 
+void render_star_count_dialog_text(
+#include <rus/render_dialog_char_options_start.h>
+
+    s8 tensDigit = gDialogVariable / 10;
+    s8 onesDigit = gDialogVariable - (tensDigit * 10);
+
+    if (tensDigit != 0) {
+        render_generic_char(tensDigit);
+        create_dl_translation_matrix(MENU_MTX_NOPUSH, gDialogCharWidths[tensDigit], 0, 0);
+        linePos += gDialogCharWidths[tensDigit];
+    }
+
+    render_generic_char(onesDigit);
+    create_dl_translation_matrix(MENU_MTX_NOPUSH, gDialogCharWidths[onesDigit], 0, 0);
+    linePos += gDialogCharWidths[onesDigit];
+
+#include <rus/render_dialog_char_options_end.h>
+}
+
 #endif // This will be used in "src/game/ingame_menu.c"

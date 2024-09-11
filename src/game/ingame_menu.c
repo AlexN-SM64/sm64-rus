@@ -1082,6 +1082,7 @@ void adjust_pos_and_print_period_char(s8 *xMatrix, s16 *linePos) {
 }
 #endif
 
+/* Render star count dialog is being fixed and included in "render_dialog_special.h"
 #ifdef VERSION_EU
 void render_star_count_dialog_text(struct DialogEntry *dialog, s8 *linePos)
 #else
@@ -1140,6 +1141,7 @@ void render_star_count_dialog_text(s8 *xMatrix, s16 *linePos)
     xMatrix[0] = 1;
 #endif
 }
+*/
 
 #if !defined(VERSION_JP) && !defined(VERSION_SH)
 #ifdef VERSION_EU
@@ -1378,6 +1380,7 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
                 xMatrix = 1;
                 break;
 #endif
+/* Render star count dialog case is being fixed and included in "switch_dialog_special_letters.h"
             case DIALOG_CHAR_STAR_COUNT:
 #ifdef VERSION_EU
                 render_star_count_dialog_text(dialog, &xMatrix);
@@ -1385,6 +1388,7 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
                 render_star_count_dialog_text(&xMatrix, &linePos);
 #endif
                 break;
+*/
 #ifdef VERSION_EU
             case DIALOG_CHAR_DOUBLE_LOW_QUOTE:
                 render_generic_dialog_char_at_pos(dialog, gDialogX, gDialogY + 8, 0xF6);
