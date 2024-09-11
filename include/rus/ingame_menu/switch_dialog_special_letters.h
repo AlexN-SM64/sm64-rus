@@ -36,10 +36,5 @@ case DIALOG_CHANGE_SUFFIX_IN_WORD_ZVEZDA:
 #include <rus/render_dialog_char_options_indexes.h>
 	);
 	break;
-case DIALOG_CHAR_STAR_COUNT:
-    render_star_count_dialog_text(
-#include <rus/render_dialog_char_options_indexes.h>
-	);
-break;
 
 #endif // This will be used in "src/game/ingame_menu.c"
