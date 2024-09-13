@@ -12,10 +12,10 @@
 
 ## Скриншоты
 
-![Письмо от принцессы](/md_screenshots/peach's message.png)
-![Первый диалог игры](/md_screenshots/first dialog.png)
-![Первая табличка около замки](/md_screenshots/first sign.png)
-![Приветствие от Лакиту](/md_screenshots/lakitu tell.png)
-![Письмо от Боузера](/md_screenshots/bowser letter.png)
-![Первый рассказ Тоада](/md_screenshots/first toad tell.png)
-![Начало первого курса](/md_screenshots/first course start.png)
+![Письмо от принцессы](/md_screenshots/peach's_message.png)
+![Первый диалог игры](/md_screenshots/first_dialog.png)
+![Первая табличка около замки](/md_screenshots/first_sign.png)
+![Приветствие от Лакиту](/md_screenshots/lakitu_tell.png)
+![Письмо от Боузера](/md_screenshots/bowser_letter.png)
+![Первый рассказ Тоада](/md_screenshots/first_toad_tell.png)
+![Начало первого курса](/md_screenshots/first_course_start.png)
