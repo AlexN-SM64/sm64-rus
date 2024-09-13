@@ -25,5 +25,5 @@
 ![Разговор Купы-быстрой](/md_screenshots/koopa_tell.png)
 ![Горка с временем](/md_screenshots/slide.png)
 ![Меню курса](/md_screenshots/course_menu.png)
-![Интро](/md_screenshots/intro.png)
+![Интро](/md_screenshots/intro.PNG)
 ![Выбор файла](/md_screenshots/file_select.png)
