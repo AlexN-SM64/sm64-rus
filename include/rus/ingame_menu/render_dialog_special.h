@@ -2,6 +2,8 @@
 #define RUS_INGAME_MENU_RENDER_DIALOG_SPECIAL_H
 
 void render_dialog_cyrillic_capital_diacritic(u8 letter, u8 diacritic,
+#include <rus/render_dialog_char_options_initialize.h>
+) {
 #include <rus/render_dialog_char_options_start.h>
 		render_generic_char(letter);
 		create_dl_translation_matrix(MENU_MTX_NOPUSH, 1, 4, 0);
@@ -13,6 +15,8 @@ void render_dialog_cyrillic_capital_diacritic(u8 letter, u8 diacritic,
 }
 
 void render_dialog_cyrillic_small_diacritic(u8 letter, u8 diacritic,
+#include <rus/render_dialog_char_options_initialize.h>
+) {
 #include <rus/render_dialog_char_options_start.h>
 		render_generic_char(letter);
 		render_generic_char(diacritic);
@@ -23,18 +27,22 @@ void render_dialog_cyrillic_small_diacritic(u8 letter, u8 diacritic,
 }
 
 void change_dialog_position_y_down(
+#include <rus/render_dialog_char_options_initialize.h>
+) {
 #include <rus/render_dialog_char_options_start.h>
 		create_dl_translation_matrix(MENU_MTX_NOPUSH, 0, -3, 0);
 #include <rus/render_dialog_char_options_end.h>
 }
 
 void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP,
-#include <rus/render_dialog_char_options_start.h>
+#include <rus/render_dialog_char_options_initialize.h>
+) {
 
     s8 tensDigit = gDialogVariable / 10;
     s8 onesDigit = gDialogVariable - (tensDigit * 10);
 	
 	u8 curLetter = letterRP;
+	
 	if (tensDigit != 1) {
 		if (onesDigit == 1) {
 			curLetter = letterIS;
@@ -43,6 +51,8 @@ void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP
 			curLetter = letterRS;
 		}
 	}
+
+#include <rus/render_dialog_char_options_start.h>
 	
 	if (curLetter == DIALOG_CHAR_CYRILLIC_SMALL_IO) {
 		render_generic_char(ASCII_TO_DIALOG('e'));
