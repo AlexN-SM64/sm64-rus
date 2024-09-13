@@ -81,12 +81,12 @@ ALIGNED8 static const Texture texture_credits_char_cyrillic_ya[] = {
 #include "textures/segment2/texture_credits_char_cyrillic_ya.rgba16.inc.c"
 };
 
-ALIGNED8 static const Texture texture_credits_char_accent_diaeresis[] = {
-#include "textures/segment2/texture_credits_char_accent_diaeresis.rgba16.inc.c"
+ALIGNED8 static const Texture texture_credits_char_umlaut[] = {
+#include "textures/segment2/texture_credits_char_umlaut.rgba16.inc.c"
 };
 
-ALIGNED8 static const Texture texture_credits_char_accent_breve[] = {
-#include "textures/segment2/texture_credits_char_accent_breve.rgba16.inc.c"
+ALIGNED8 static const Texture texture_credits_char_short[] = {
+#include "textures/segment2/texture_credits_char_short.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_credits_char_undersym_left[] = {

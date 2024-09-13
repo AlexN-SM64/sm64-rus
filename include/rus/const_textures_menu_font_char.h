@@ -81,8 +81,12 @@ ALIGNED8 static const Texture texture_menu_font_char_cyrillic_ya[] = {
 #include "levels/menu/texture_menu_font_char_cyrillic_ya.ia8.inc.c"
 };
 
-ALIGNED8 static const Texture texture_menu_font_char_accent_breve[] = {
-#include "levels/menu/texture_menu_font_char_accent_breve.ia8.inc.c"
+ALIGNED8 static const Texture texture_menu_font_char_umlaut[] = {
+#include "levels/menu/texture_menu_font_char_umlaut.ia8.inc.c"
+};
+
+ALIGNED8 static const Texture texture_menu_font_char_short[] = {
+#include "levels/menu/texture_menu_font_char_short.ia8.inc.c"
 };
 
 ALIGNED8 static const Texture texture_menu_font_char_undersym_left[] = {

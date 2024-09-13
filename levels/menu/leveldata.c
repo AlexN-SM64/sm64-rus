@@ -1532,11 +1532,13 @@ ALIGNED8 static const Texture texture_menu_font_char_ampersand[] = {
 #endif
 
 #include <rus/const_textures_menu_font_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+
+#ifdef VERSION_EU
+// 0x0700B840
 ALIGNED8 static const Texture texture_menu_font_char_umlaut[] = {
 #include "levels/menu/main_menu_seg7_eu.0B840.ia8.inc.c"
 };
 
-#ifdef VERSION_EU
 // 0x0700B880
 ALIGNED8 static const Texture texture_menu_font_char_cedilla_mayus[] = {
 #include "levels/menu/main_menu_seg7_eu.0B880.ia8.inc.c"

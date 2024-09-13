@@ -4,7 +4,7 @@
 texture_menu_font_char_cyrillic_be,      texture_menu_font_char_cyrillic_ghe,
 texture_menu_font_char_cyrillic_de,      texture_menu_font_char_cyrillic_zhe,
 texture_menu_font_char_cyrillic_ze,      texture_menu_font_char_cyrillic_i,
-texture_menu_font_char_accent_breve,     texture_menu_font_char_cyrillic_el,
+texture_menu_font_char_short,            texture_menu_font_char_cyrillic_el,
 texture_menu_font_char_cyrillic_pe,      texture_menu_font_char_cyrillic_u,
 texture_menu_font_char_cyrillic_ef,      texture_menu_font_char_cyrillic_tse,
 texture_menu_font_char_cyrillic_che,     texture_menu_font_char_cyrillic_sha,

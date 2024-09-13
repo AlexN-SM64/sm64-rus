@@ -161,16 +161,16 @@ ALIGNED8 static const Texture texture_font_char_cyrillic_small_ya[] = {
 #include "textures/segment2/texture_font_char_cyrillic_small_ya.ia4.inc.c"
 };
 
-ALIGNED8 static const Texture texture_font_char_accent_diaeresis[] = {
-#include "textures/segment2/texture_font_char_accent_diaeresis.ia4.inc.c"
+ALIGNED8 static const Texture texture_font_char_umlaut[] = {
+#include "textures/segment2/texture_font_char_umlaut.ia4.inc.c"
 };
 
-ALIGNED8 static const Texture texture_font_char_capital_accent_breve[] = {
-#include "textures/segment2/texture_font_char_capital_accent_breve.ia4.inc.c"
+ALIGNED8 static const Texture texture_font_char_capital_short[] = {
+#include "textures/segment2/texture_font_char_capital_short.ia4.inc.c"
 };
 
-ALIGNED8 static const Texture texture_font_char_small_accent_breve[] = {
-#include "textures/segment2/texture_font_char_small_accent_breve.ia4.inc.c"
+ALIGNED8 static const Texture texture_font_char_small_short[] = {
+#include "textures/segment2/texture_font_char_small_short.ia4.inc.c"
 };
 
 #endif // This will be used in "bin/segment2.c"
