@@ -1419,6 +1419,8 @@ ALIGNED8 static const Texture texture_font_char_eu_eszeet[] = {
 
 // US Small Font
 #else
+#include <rus/const_textures_font_char_origin.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
 ALIGNED8 static const Texture texture_font_char_us_0[] = {
 #include "textures/segment2/font_graphics.05900.ia4.inc.c"
 };
@@ -1786,6 +1788,7 @@ ALIGNED8 static const Texture texture_font_char_us_button_C_left[] = {
 ALIGNED8 static const Texture texture_font_char_us_button_C_right[] = {
 #include "textures/segment2/font_graphics.06FC0.ia4.inc.c"
 };
+*/
 #endif
 
 #include <rus/const_textures_font_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
@@ -1963,6 +1966,19 @@ const Texture *const main_font_lut[] = {
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0, texture_font_char_us_comma,
 #include <rus/const_font_lut.h> //! INCLUDED ONLY IN RUSSIAN VERSION -- 11x4 SYMBOLS IS HERE
+/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+                  0x0,               0x0,               0x0,               0x0,
+*/
                   0x0,               0x0,               0x0, texture_font_char_us_slash,
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0,               0x0,

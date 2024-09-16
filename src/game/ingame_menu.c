@@ -82,6 +82,11 @@ u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
 #else
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  4,
 #include <rus/ingame_menu/dialog_char_widths.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5,  6,
+*/
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #endif
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -232,6 +237,8 @@ static u8 *alloc_ia8_text_from_i1(u16 *in, s16 width, s16 height) {
     return out;
 }
 
+#include <rus/render_generic_char_origin.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
 void render_generic_char(u8 c) {
     void **fontLUT;
     void *packedTexture;
@@ -259,6 +266,7 @@ void render_generic_char(u8 c) {
                             (gDialogX + 8) << 2, gDialogY << 2, G_TX_RENDERTILE, 8 << 6, 4 << 6, 1 << 10, 1 << 10);
 #endif
 }
+*/
 
 #ifdef VERSION_EU
 u8 *alloc_ia4_tex_from_i1(u8 *in, s16 width, s16 height) {
@@ -2702,7 +2710,23 @@ s16 render_pause_courses_and_castle(void) {
 }
 
 //! ONLY IN RUSSIAN VERSION, INCLUDED IN "rus/define_hud_text_x.h"
+/*
+#if defined(VERSION_JP)
+#define TXT_HISCORE_X 112
+#define TXT_HISCORE_Y 48
+#define TXT_CONGRATS_X 60
+#elif defined(VERSION_SH)
+#define TXT_HISCORE_X 118
+#define TXT_HISCORE_Y 48
+#define TXT_CONGRATS_X 70
+#else
+#define TXT_HISCORE_X 109
+*/
 #define TXT_HISCORE_Y 36
+/*
+#define TXT_CONGRATS_X 70
+#endif
+*/
 
 #define HUD_PRINT_HISCORE         0
 #define HUD_PRINT_CONGRATULATIONS 1
