@@ -237,7 +237,7 @@ static u8 *alloc_ia8_text_from_i1(u16 *in, s16 width, s16 height) {
     return out;
 }
 
-#include <rus/render_generic_char_origin.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include <rus/ingame_menu/render_generic_char_origin.h> //! INCLUDED ONLY IN RUSSIAN VERSION
 /* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
 void render_generic_char(u8 c) {
     void **fontLUT;
@@ -692,6 +692,8 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
     }
 }
 
+#include <rus/ingame_menu/print_credits_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+
 void print_credits_string(s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
     void **fontLUT = segmented_to_virtual(main_credits_font_lut);
@@ -707,6 +709,7 @@ void print_credits_string(s16 x, s16 y, const u8 *str) {
 
     while (str[strPos] != GLOBAR_CHAR_TERMINATOR) {
         switch (str[strPos]) {
+#include <rus/ingame_menu/switch_credits_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
             case GLOBAL_CHAR_SPACE:
                 curX += 4;
                 break;
