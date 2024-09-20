@@ -23,7 +23,7 @@
 #include "level_table.h"
 #include "dialog_ids.h"
 
-#include <rus/define_hud_text_ansi.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/define_hud_text_ansi.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 struct SpawnInfo gPlayerSpawnInfos[1];
 struct GraphNode *D_8033A160[0x100];

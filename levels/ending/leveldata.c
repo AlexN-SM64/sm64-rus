@@ -245,7 +245,7 @@ const Gfx dl_cake_end_screen_eu_070297D8[] = {
 // VERSION_EU
 #else
 
-#include <rus/const_cake_end_textures.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_cake_end_textures.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 /* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
 #include "levels/ending/cake.inc.c"
 */

@@ -1531,7 +1531,7 @@ ALIGNED8 static const Texture texture_menu_font_char_ampersand[] = {
 };
 #endif
 
-#include <rus/const_textures_menu_font_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_textures_menu_font_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 #ifdef VERSION_EU
 // 0x0700B840
@@ -1647,7 +1647,7 @@ const Texture *const menu_font_lut[] = {
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0, texture_menu_font_char_comma,
-#include <rus/const_menu_font_lut.h> //! INCLUDED ONLY IN RUSSIAN VERSION -- 6x4 SYMBOLS IS HERE
+#include "rus/const_menu_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION -- 6x4 SYMBOLS IS HERE
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,

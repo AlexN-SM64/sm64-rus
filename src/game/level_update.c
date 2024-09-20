@@ -50,7 +50,7 @@
 
 #define WARP_NODE_CREDITS_MIN 0xF8
 
-#include <rus/const_credits_ansi.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_credits_ansi.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 
 struct CreditsEntry sCreditsSequence[] = {

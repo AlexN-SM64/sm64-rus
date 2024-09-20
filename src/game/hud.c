@@ -15,8 +15,8 @@
 #include "print.h"
 
 //! INCLUDED ONLY IN RUSSIAN VERSION
-#include <rus/define_hud_text_ansi.h>
-#include <rus/define_hud_text_x.h>
+#include "rus/define_hud_text_ansi.h"
+#include "rus/define_hud_text_x.h"
 
 /* @file hud.c
  * This file implements HUD rendering and power meter animations.
