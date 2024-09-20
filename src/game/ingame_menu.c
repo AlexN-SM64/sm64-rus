@@ -24,8 +24,8 @@
 #include "types.h"
 
 //! INCLUDED ONLY IN RUSSIAN VERSION
-#include <rus/define_chars.h>
-#include <rus/define_hud_text_x.h>
+#include "rus/define_chars.h"
+#include "rus/define_hud_text_x.h"
 
 u16 gDialogColorFadeTimer;
 s8 gLastDialogLineNum;
@@ -81,7 +81,7 @@ u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
     0,  4,  4,  0,  0,  5,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #else
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  4,
-#include <rus/ingame_menu/dialog_char_widths.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/dialog_char_widths.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 /* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -237,8 +237,6 @@ static u8 *alloc_ia8_text_from_i1(u16 *in, s16 width, s16 height) {
     return out;
 }
 
-#include <rus/ingame_menu/render_generic_char_origin.h> //! INCLUDED ONLY IN RUSSIAN VERSION
-/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
 void render_generic_char(u8 c) {
     void **fontLUT;
     void *packedTexture;
@@ -266,7 +264,6 @@ void render_generic_char(u8 c) {
                             (gDialogX + 8) << 2, gDialogY << 2, G_TX_RENDERTILE, 8 << 6, 4 << 6, 1 << 10, 1 << 10);
 #endif
 }
-*/
 
 #ifdef VERSION_EU
 u8 *alloc_ia4_tex_from_i1(u8 *in, s16 width, s16 height) {
@@ -326,7 +323,7 @@ void render_uppercase_diacritic(s16 *xPos, s16 *yPos, u8 letter, u8 diacritic) {
 }
 #endif // VERSION_EU
 
-#include <rus/ingame_menu/render_diacritics.h> //! ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/render_diacritics.h" //! ONLY IN RUSSIAN VERSION
 
 #if !defined(VERSION_JP) && !defined(VERSION_SH)
 struct MultiTextEntry {
@@ -442,7 +439,7 @@ void print_generic_string(s16 x, s16 y, const u8 *str) {
                 render_lowercase_diacritic(&xCoord, &yCoord, DIALOG_CHAR_I_NO_DIA, str[strPos] & 0xF);
                 break;
 #else // i.e. not EU
-#include <rus/ingame_menu/switch_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
                 break;
@@ -539,7 +536,7 @@ void print_hud_char_umlaut(s16 x, s16 y, u8 chr) {
 }
 #endif
 
-#include <rus/ingame_menu/print_hud_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/print_hud_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 /**
  * Prints a hud string depending of the hud table list defined.
@@ -583,7 +580,7 @@ void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
                 curX += xStride;
                 break;
 #else
-#include <rus/ingame_menu/switch_hud_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_hud_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case GLOBAL_CHAR_SPACE:
                 curX += 8;
                 break;
@@ -628,7 +625,7 @@ void print_menu_char_umlaut(s16 x, s16 y, u8 chr) {
 }
 #endif
 
-#include <rus/ingame_menu/print_menu_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/print_menu_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
     UNUSED s8 mark = DIALOG_MARK_NONE; // unused in EU
@@ -653,7 +650,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
                 curX += gDialogCharWidths[str[strPos]];
                 break;
 #else
-#include <rus/ingame_menu/switch_menu_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_menu_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
                 break;
@@ -692,7 +689,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
     }
 }
 
-#include <rus/ingame_menu/print_credits_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/print_credits_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 void print_credits_string(s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
@@ -709,7 +706,7 @@ void print_credits_string(s16 x, s16 y, const u8 *str) {
 
     while (str[strPos] != GLOBAR_CHAR_TERMINATOR) {
         switch (str[strPos]) {
-#include <rus/ingame_menu/switch_credits_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_credits_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case GLOBAL_CHAR_SPACE:
                 curX += 4;
                 break;
@@ -1114,7 +1111,7 @@ void render_star_count_dialog_text(s8 *xMatrix, s16 *linePos)
         if (xMatrix[0] != 1) {
             create_dl_translation_matrix(MENU_MTX_NOPUSH, (f32)(gDialogCharWidths[DIALOG_CHAR_SPACE] * xMatrix[0]), 0, 0);
         }
-#include <rus/remove_space.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/remove_space.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
         render_generic_char(tensDigit);
         create_dl_translation_matrix(MENU_MTX_NOPUSH, (f32) gDialogCharWidths[tensDigit], 0, 0);
@@ -1202,7 +1199,7 @@ void render_dialog_uppercase_diacritic(struct DialogEntry *dialog, u8 chr, u8 di
 }
 #endif
 
-#include <rus/ingame_menu/render_dialog_special.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/render_dialog_special.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 u32 ensure_nonnegative(s16 value) {
     if (value < 0) {
@@ -1337,7 +1334,7 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
                 render_dialog_lowercase_diacritic(dialog, DIALOG_CHAR_I_NO_DIA, strChar & 0xF);
                 break;
 #else
-#include <rus/ingame_menu/switch_dialog_special_letters.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_dialog_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
                 break;
@@ -1918,7 +1915,7 @@ u8 ascii_to_credits_char(u8 c) {
     if (c == '6') {
         return ASCII_TO_DIALOG('6');
     }
-#include <rus/ingame_menu/ansi_to_credits_char.h> //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/ansi_to_credits_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
     return GLOBAL_CHAR_SPACE;
 }
