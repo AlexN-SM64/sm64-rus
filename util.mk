@@ -15,8 +15,10 @@ endef
 # Returns the path to the command $(1) if exists. Otherwise returns an empty string.
 find-command = $(shell which $(1) 2>/dev/null)
 
+ifneq (,$(wildcard rus_build_options.mk))
 ifeq ($(filter clean distclean,$(MAKECMDGOALS)),)
 # INCLUDED ONLY IN RUSSIAN VERSION
 include rus_build_options.mk
 include rus_build_content.mk
+endif
 endif

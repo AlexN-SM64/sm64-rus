@@ -24,7 +24,3 @@ ifeq ($(TARGET_N64),1)
     $(warning При открытии ROMа видеоплагин GlideN64 не поддерживает этот микрокод. Рекомендуется изменить в настройках эмулятора.)
   endif
 endif
-
-ifeq ($(OSTYPE),msys)
-  bash ./msys2_mingw_gcc_downgrade.sh --noconfirm
-endif
