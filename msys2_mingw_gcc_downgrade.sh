@@ -17,7 +17,7 @@ if (pacman -Q mingw-w64-ucrt-x86_64-gcc); then
 export UCRT_PAKS="https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst"
 fi
 
-pacman -U $MINGW64_PAKS $MINGW32_PAKS $UCRT_PAKS
+pacman -U $1 $MINGW64_PAKS $MINGW32_PAKS $UCRT_PAKS
 
 exit 0
 

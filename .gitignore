@@ -6,8 +6,3 @@ Thumbs.db
 
 # Папки с файлами
 /!p
-
-# Конвертированные текстуры
-/actors/**/*.inc.c
-/levels/**/*.inc.c
-/textures/**/*.inc.c
