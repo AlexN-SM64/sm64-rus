@@ -355,7 +355,8 @@ void render_hud_timer(void) {
 
     timerFracSecs = ((timerValFrames - (timerMins * 1800) - (timerSecs * 30)) & 0xFFFF) / 3;
 #ifndef VERSION_EU
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(TXT_TIME_X), 185, TXT_TIME); //! ONLY IN RUSSIAN VERSION
+#include "rus/define_hud_text_time_x.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(TXT_TIME_X_OUTPUT), 185, TXT_TIME); //! ONLY IN RUSSIAN VERSION
 #endif
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(91), 185, "%0d", timerMins);
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(71), 185, "%02d", timerSecs);
