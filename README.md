@@ -231,7 +231,7 @@ popd
 ```
 
 4. Установите пакет `patch`:
-- Linux (Ubuntu): `sudo apt install patch`
+- Linux / WSL (Ubuntu): `sudo apt install patch`
 - MSYS2: `pacman -S patch`
 
 5. Измените `Makefile` с помощью патча:
