@@ -81,8 +81,8 @@
 // Настройки камеры
 #define TEXT_LAKITU_MARIO _("ЛАКИТУ + МАРИО")
 #define TEXT_LAKITU_STOP _("ЛАКИТУ + СТОП")
-#define TEXT_NORMAL_UPCLOSE __("(ОБЫЧНЫЙ)(ВБЛИЗИ)")
-#define TEXT_NORMAL_FIXED __("(ОБЫЧНЫЙ)(ФИКСИР.)")
+#define TEXT_NORMAL_UPCLOSE _("(ОБЫЧНЫЙ)(ВБЛИЗИ)")
+#define TEXT_NORMAL_FIXED _("(ОБЫЧНЫЙ)(ФИКСИР.)")
 
 // Курс пройден
 #define TEXT_HUD_CONGRATULATIONS _("~П~О~З~Д~Р~А~В~Л~Я~Е~М")
@@ -99,10 +99,10 @@
  * Субтитры в концовке игры
  */
 #define TEXT_FILE_MARIO_EXCLAMATION _("Марио!")
-#define TEXT_POWER_STARS_RESTORED __("Сила Звёзд возвратилась в замок...")
-#define TEXT_THANKS_TO_YOU __("...и всё это благодаря вам!")
-#define TEXT_THANK_YOU_MARIO __("Спасибо, Марио!")
-#define TEXT_SOMETHING_SPECIAL __("Мы должны сделать для вас что-то особенное...")
+#define TEXT_POWER_STARS_RESTORED _("Сила Звёзд возвратилась в замок...")
+#define TEXT_THANKS_TO_YOU _("...и всё это благодаря вам!")
+#define TEXT_THANK_YOU_MARIO _("Спасибо, Марио!")
+#define TEXT_SOMETHING_SPECIAL _("Мы должны сделать для вас что-то особенное...")
 #define TEXT_LISTEN_EVERYBODY _("Слушайте все,")
 #define TEXT_LETS_HAVE_CAKE _("давайте испечём вкусный торт...")
 #define TEXT_FOR_MARIO _("...для Марио...")
