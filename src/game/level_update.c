@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+#include "define_diff_change.h"
+
 #include "sm64.h"
 #include "seq_ids.h"
 #include "dialog_ids.h"
@@ -27,7 +29,6 @@
 #endif
 #include "level_table.h"
 #include "course_table.h"
-#include "rumble_init.h"
 
 #define PLAY_MODE_NORMAL 0
 #define PLAY_MODE_PAUSED 2
@@ -373,12 +374,12 @@ void init_mario_after_warp(void) {
             && sWarpDest.nodeId == 31
 #endif
         )
-            play_sound(SOUND_MENU_MARIO_CASTLE_WARP, gGlobalSoundSource);
+            play_sound(SOUND_MENU_MARIO_CASTLE_WARP, DIFF_GLOBAL_SOUND_SOURCE);
 #ifndef VERSION_JP
         if (sWarpDest.levelNum == LEVEL_CASTLE_GROUNDS && sWarpDest.areaIdx == 1
             && (sWarpDest.nodeId == 7 || sWarpDest.nodeId == 10 || sWarpDest.nodeId == 20
                 || sWarpDest.nodeId == 30)) {
-            play_sound(SOUND_MENU_MARIO_CASTLE_WARP, gGlobalSoundSource);
+            play_sound(SOUND_MENU_MARIO_CASTLE_WARP, DIFF_GLOBAL_SOUND_SOURCE);
         }
 #endif
     }
@@ -605,7 +606,7 @@ void initiate_painting_warp(void) {
 
                 gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_ACTIVE;
 
-                play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+                play_sound(SOUND_MENU_STAR_SOUND, DIFF_GLOBAL_SOUND_SOURCE);
                 fadeout_music(398);
 #if ENABLE_RUMBLE
                 queue_rumble_data(80, 70);
@@ -660,7 +661,7 @@ s16 level_trigger_warp(struct MarioState *m, s32 warpOp) {
                 sDelayedWarpTimer = 48;
                 sSourceWarpNodeId = WARP_NODE_DEATH;
                 play_transition(WARP_TRANSITION_FADE_INTO_BOWSER, 0x30, 0x00, 0x00, 0x00);
-                play_sound(SOUND_MENU_BOWSER_LAUGH, gGlobalSoundSource);
+                play_sound(SOUND_MENU_BOWSER_LAUGH, DIFF_GLOBAL_SOUND_SOURCE);
                 break;
 
             case WARP_OP_WARP_FLOOR:
@@ -681,7 +682,7 @@ s16 level_trigger_warp(struct MarioState *m, s32 warpOp) {
                 sSourceWarpNodeId = WARP_NODE_F2;
                 play_transition(WARP_TRANSITION_FADE_INTO_COLOR, 0x1E, 0xFF, 0xFF, 0xFF);
 #ifndef VERSION_JP
-                play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+                play_sound(SOUND_MENU_STAR_SOUND, DIFF_GLOBAL_SOUND_SOURCE);
 #endif
                 break;
 
@@ -766,7 +767,7 @@ void initiate_delayed_warp(void) {
                 case WARP_OP_CREDITS_END:
                     warp_special(-1);
                     sound_banks_enable(SEQ_PLAYER_SFX,
-                                       SOUND_BANKS_ALL & ~SOUND_BANKS_DISABLED_AFTER_CREDITS);
+                                       DIFF_SOUND_BANKS);
                     break;
 
                 case WARP_OP_DEMO_NEXT:
@@ -857,7 +858,7 @@ void update_hud_values(void) {
         gHudDisplay.keys = gMarioState->numKeys;
 
         if (numHealthWedges > gHudDisplay.wedges) {
-            play_sound(SOUND_MENU_POWER_METER, gGlobalSoundSource);
+            play_sound(SOUND_MENU_POWER_METER, DIFF_GLOBAL_SOUND_SOURCE);
         }
         gHudDisplay.wedges = numHealthWedges;
 
@@ -934,9 +935,9 @@ s32 play_mode_normal(void) {
 }
 
 s32 play_mode_paused(void) {
-    if (gMenuOptSelectIndex == MENU_OPT_NONE) {
+    if (DIFF_MENU_OPT_SELECT_INDEX == MENU_OPT_NONE) {
         set_menu_mode(MENU_MODE_RENDER_PAUSE_SCREEN);
-    } else if (gMenuOptSelectIndex == MENU_OPT_DEFAULT) {
+    } else if (DIFF_MENU_OPT_SELECT_INDEX == MENU_OPT_DEFAULT) {
         raise_background_noise(1);
         gCameraMovementFlags &= ~CAM_MOVE_PAUSE_SCREEN;
         set_play_mode(PLAY_MODE_NORMAL);
@@ -1240,6 +1241,6 @@ s32 lvl_set_current_level(UNUSED s16 arg0, s32 levelNum) {
  * Play the "thank you so much for to playing my game" sound.
  */
 s32 lvl_play_the_end_screen_sound(UNUSED s16 arg0, UNUSED s32 arg1) {
-    play_sound(SOUND_MENU_THANK_YOU_PLAYING_MY_GAME, gGlobalSoundSource);
+    play_sound(SOUND_MENU_THANK_YOU_PLAYING_MY_GAME, DIFF_GLOBAL_SOUND_SOURCE);
     return 1;
 }

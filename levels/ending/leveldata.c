@@ -1,8 +1,4 @@
-#include <PR/ultratypes.h>
-#include <PR/gbi.h>
-
-#include "macros.h"
-#include "types.h"
+#include "define_diff_change.h"
 
 #include "make_const_nonconst.h"
 
@@ -10,32 +6,32 @@
 #include "levels/ending/cake_eu.inc.c"
 
 // 0x07023000 - 0x07023FFF
-ALIGNED8 static const Texture cake_end_texture_eu_35[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_35[] = {
 #include "levels/ending/eu_023000.rgba16.inc.c"
 };
 
 // 0x07024000 - 0x07024FFF
-ALIGNED8 static const Texture cake_end_texture_eu_36[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_36[] = {
 #include "levels/ending/eu_024000.rgba16.inc.c"
 };
 
 // 0x07025000 - 0x07025FFF
-ALIGNED8 static const Texture cake_end_texture_eu_37[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_37[] = {
 #include "levels/ending/eu_025000.rgba16.inc.c"
 };
 
 // 0x07026000 - 0x07026FFF
-ALIGNED8 static const Texture cake_end_texture_eu_38[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_38[] = {
 #include "levels/ending/eu_026000.rgba16.inc.c"
 };
 
 // 0x07027000 - 0x07027FFF
-ALIGNED8 static const Texture cake_end_texture_eu_39[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_39[] = {
 #include "levels/ending/eu_027000.rgba16.inc.c"
 };
 
 // 0x07028000 - 0x07028FFF
-ALIGNED8 static const Texture cake_end_texture_eu_40[] = {
+ALIGNED8 static const DIFF_TEXTURE cake_end_texture_eu_40[] = {
 #include "levels/ending/eu_028000.rgba16.inc.c"
 };
 

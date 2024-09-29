@@ -1,5 +1,8 @@
 #include <PR/ultratypes.h>
 
+#define NOT_INVERTABLE
+#include "define_diff_change.h"
+
 #include "prevent_bss_reordering.h"
 #include "area.h"
 #include "sm64.h"
@@ -35,7 +38,7 @@ s16 gCurrCourseNum;
 s16 gCurrActNum;
 s16 gCurrAreaIndex;
 s16 gSavedCourseNum;
-s16 gMenuOptSelectIndex;
+s16 DIFF_MENU_OPT_SELECT_INDEX;
 s16 gSaveOptSelectIndex;
 
 struct SpawnInfo *gMarioSpawnInfo = &gPlayerSpawnInfos[0];
@@ -259,7 +262,7 @@ void unload_area(void) {
 }
 
 void load_mario_area(void) {
-    stop_sounds_in_continuous_banks();
+    DIFF_STOP_SOUNDS_IN_CONTINUOUS_BANKS();
     load_area(gMarioSpawnInfo->areaIndex);
 
     if (gCurrentArea->index == gMarioSpawnInfo->areaIndex) {
@@ -384,9 +387,9 @@ void render_game(void) {
 
         gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, BORDER_HEIGHT, SCREEN_WIDTH,
                       SCREEN_HEIGHT - BORDER_HEIGHT);
-        gMenuOptSelectIndex = render_menus_and_dialogs();
-        if (gMenuOptSelectIndex != MENU_OPT_NONE) {
-            gSaveOptSelectIndex = gMenuOptSelectIndex;
+        DIFF_MENU_OPT_SELECT_INDEX = render_menus_and_dialogs();
+        if (DIFF_MENU_OPT_SELECT_INDEX != MENU_OPT_NONE) {
+            gSaveOptSelectIndex = DIFF_MENU_OPT_SELECT_INDEX;
         }
 
         if (D_8032CE78 != NULL) {
