@@ -165,18 +165,9 @@ make
 2. Запустите один из терминалов MSYS2 MinGW и установите пакеты, которые вам нужны (НЕ запустите MSYS2 MSYS, MSYS2 CLANG или MSYS2 CLANGARM):
 
 - 64 бит:
-	+ а) запустите MSYS2 MinGW64 и установите:
-```
-pacman -S git make python3 mingw-w64-x86_64-gcc patch
-```
-	+ б) запустите MSYS2 UCRT64 и установите:
-```
-pacman -S git make python3 mingw-w64-ucrt-x86_64-gcc patch
-```
-- 32 бита: запустите MSYS2 MinGW32 и установите:
-```
-pacman -S git make python3 mingw-w64-i686-gcc patch
-```
+	+ а) запустите MSYS2 MinGW64 и установите: `pacman -S git make python3 mingw-w64-x86_64-gcc patch`
+	+ б) запустите MSYS2 UCRT64 и установите: `pacman -S git make python3 mingw-w64-ucrt-x86_64-gcc patch`
+- 32 бита: запустите MSYS2 MinGW32 и установите: `pacman -S git make python3 mingw-w64-i686-gcc patch`
 - НЕ установите следующий пакет называющийся простым `gcc` для MSYS2 MSYS.
 
 Примечание: `patch` нужен для изменений в `Makefile`.
