@@ -30,7 +30,7 @@
 #define NAME_K_KATO      "йеидгн йюрн"
 #define NAME_C_MARTINET  "вюпкэг люпрхме"
 #define NAME_L_SWAN      "кеякх ябюм"
-#define NAME_H_YAMAUCHI  "ухпнях ълюсвх"
+#define NAME_H_YAMAUCHI  "ухпнях ълюсрх"
 
 const char *credits01[] = { "1дхпейрнп хцпш", NAME_S_MIYAMOTO };
 const char *credits02[] = { "2дхпейрнпш юяяхяремрю", NAME_Y_KOIZUMI, NAME_T_TEZUKA };
