@@ -26,11 +26,17 @@ void render_dialog_cyrillic_small_diacritic(u8 letter, u8 diacritic,
 #include "rus/render_dialog_char_options_end.h"
 }
 
-void change_dialog_position_y_down(
+void change_dialog_position_y(s16 dialogID,
 #include "rus/render_dialog_char_options_initialize.h"
 ) {
+	s16 dialogIDs[] = { DIALOG_008, DIALOG_161 };
+	f32 yPositions[] = { -3, -1 };
+	s16 i = 0;
+	while (dialogIDs[i] != dialogID) {
+		i += 1;
+	}
 #include "rus/render_dialog_char_options_start.h"
-		create_dl_translation_matrix(MENU_MTX_NOPUSH, 0, -3, 0);
+		create_dl_translation_matrix(MENU_MTX_NOPUSH, 0, yPositions[i], 0);
 #include "rus/render_dialog_char_options_end.h"
 }
 

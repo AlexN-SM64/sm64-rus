@@ -21,8 +21,8 @@ case DIALOG_CHAR_CYRILLIC_SMALL_IO: // ё
 #include "rus/render_dialog_char_options_indexes.h"
 	);
 	break;
-case DIALOG_CHANGE_POSITION_Y_DOWN:
-	change_dialog_position_y_down(
+case DIALOG_CHANGE_POSITION_Y:
+	change_dialog_position_y(gDialogID,
 #include "rus/render_dialog_char_options_indexes.h"
 	);
 	break;
