@@ -26,6 +26,19 @@ void render_dialog_cyrillic_small_diacritic(u8 letter, u8 diacritic,
 #include "rus/render_dialog_char_options_end.h"
 }
 
+void render_dialog_cyrillic_small_undersym(u8 letter,
+#include "rus/render_dialog_char_options_initialize.h"
+) {
+#include "rus/render_dialog_char_options_start.h"
+		render_generic_char(letter);
+		create_dl_translation_matrix(MENU_MTX_NOPUSH, (gDialogCharWidths[letter] - 2), 0, 0);
+		render_generic_char(DIALOG_CHAR_CYRILLIC_SMALL_TSE);
+		create_dl_translation_matrix(MENU_MTX_NOPUSH, 2, 0, 0);
+	
+		linePos += gDialogCharWidths[letter];
+#include "rus/render_dialog_char_options_end.h"
+}
+
 void change_dialog_position_y(s16 dialogID,
 #include "rus/render_dialog_char_options_initialize.h"
 ) {

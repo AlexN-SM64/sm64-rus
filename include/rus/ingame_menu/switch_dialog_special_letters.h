@@ -21,6 +21,16 @@ case DIALOG_CHAR_CYRILLIC_SMALL_IO: // ё
 #include "rus/render_dialog_char_options_indexes.h"
 	);
 	break;
+case DIALOG_CHAR_CYRILLIC_SMALL_TSE: // ц
+	render_dialog_cyrillic_small_undersym(ASCII_TO_DIALOG('u'),
+#include "rus/render_dialog_char_options_indexes.h"
+	);
+	break;
+case DIALOG_CHAR_CYRILLIC_SMALL_SHCHA: // щ
+	render_dialog_cyrillic_small_undersym(DIALOG_CHAR_CYRILLIC_SMALL_SHA,
+#include "rus/render_dialog_char_options_indexes.h"
+	);
+	break;
 case DIALOG_CHANGE_POSITION_Y:
 	change_dialog_position_y(gDialogID,
 #include "rus/render_dialog_char_options_indexes.h"

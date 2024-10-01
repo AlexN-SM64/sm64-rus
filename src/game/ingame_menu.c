@@ -325,7 +325,7 @@ void render_uppercase_diacritic(s16 *xPos, s16 *yPos, u8 letter, u8 diacritic) {
 }
 #endif // VERSION_EU
 
-#include "rus/ingame_menu/render_diacritics.h" //! ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/render_char_special.h" //! ONLY IN RUSSIAN VERSION
 
 #if !defined(VERSION_JP) && !defined(VERSION_SH)
 struct MultiTextEntry {

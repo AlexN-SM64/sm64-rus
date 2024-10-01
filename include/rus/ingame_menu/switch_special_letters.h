@@ -13,5 +13,11 @@ case DIALOG_CHAR_CYRILLIC_CAPITAL_IO: // Ё
 case DIALOG_CHAR_CYRILLIC_SMALL_IO: // ё
 	render_cyrillic_small_diacritic(ASCII_TO_DIALOG('e'), DIALOG_CHAR_CYRILLIC_CAPITAL_IO);
 	break;
+case DIALOG_CHAR_CYRILLIC_SMALL_TSE: // ц
+	render_cyrillic_small_undersym(ASCII_TO_DIALOG('u'));
+	break;
+case DIALOG_CHAR_CYRILLIC_SMALL_SHCHA: // щ
+	render_cyrillic_small_undersym(DIALOG_CHAR_CYRILLIC_SMALL_SHA);
+	break;
 
 #endif // This will be used in "src/game/ingame_menu.c"

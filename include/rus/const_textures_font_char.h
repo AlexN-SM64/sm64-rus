@@ -125,16 +125,12 @@ ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_ef[] = {
 #include "textures/segment2/texture_font_char_cyrillic_small_ef.ia4.inc.c"
 };
 
-ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_tse[] = {
-#include "textures/segment2/texture_font_char_cyrillic_small_tse.ia4.inc.c"
-};
-
 ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_che[] = {
 #include "textures/segment2/texture_font_char_cyrillic_small_che.ia4.inc.c"
 };
 
-ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_shcha[] = {
-#include "textures/segment2/texture_font_char_cyrillic_small_shcha.ia4.inc.c"
+ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_sha[] = {
+#include "textures/segment2/texture_font_char_cyrillic_small_sha.ia4.inc.c"
 };
 
 ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_hard_sign[] = {
@@ -171,6 +167,10 @@ ALIGNED8 static const DIFF_TEXTURE texture_font_char_capital_short[] = {
 
 ALIGNED8 static const DIFF_TEXTURE texture_font_char_small_short[] = {
 #include "textures/segment2/texture_font_char_small_short.ia4.inc.c"
+};
+
+ALIGNED8 static const DIFF_TEXTURE texture_font_char_cyrillic_small_undersym[] = {
+#include "textures/segment2/texture_font_char_cyrillic_small_undersym.ia4.inc.c"
 };
 
 #endif // This will be used in "bin/segment2.c"
