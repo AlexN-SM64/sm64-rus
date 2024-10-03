@@ -85,7 +85,7 @@ tools/apply_patch.sh patch_makefile_rus_diff3.patch
 
 8. Готовьтесь к выполнению сборки:
 ```
-./build_content.sh && make TARGET_N64=1
+bash build_content.sh && make TARGET_N64=1
 ```
 Примечания:
 
@@ -147,7 +147,7 @@ tools/apply_patch.sh patch_makefile_rus_diff3.patch
 
 8. Готовьтесь к выполнению сборки:
 ```
-./build_content.sh && make
+bash build_content.sh && make
 ```
 Примечание: Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
 
@@ -199,7 +199,7 @@ tools/apply_patch.sh patch_makefile_rus_diff3.patch
 
 10. Готовьтесь к выполнению сборки:
 ```
-./build_content.sh && make
+bash build_content.sh && make
 ```
 Примечания:
 - Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
@@ -238,7 +238,7 @@ tools/apply_patch.sh patch_makefile_rus.patch
 
 6. Выполните сборку контента:
 ```
-./build_content.sh
+bash build_content.sh
 ```
 
 Русификация теперь готова. Можно выполнить сборку!
