@@ -43,9 +43,9 @@
 
 #### Linux
 
-1. Запустите терминал и установите следующие пакеты (Ubuntu или Debian):
+1. Запустите терминал и установите следующие пакеты (Ubuntu):
 ```
-sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf libcapstone-dev patch
+sudo apt install git build-essential binutils-mips-linux-gnu pkgconf libcapstone-dev
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
 
@@ -56,7 +56,6 @@ sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf lib
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC) для компилятора,
 уберите `pkgconf` и `libcapstone-dev` в строке терминала и установите `gcc-mips-linux-gnu`.
 - В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
-- `patch` нужен для изменений в `Makefile`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
@@ -79,24 +78,18 @@ cd sm64-port
 
 Примечание: Этот ROM должен совпадать SHA1: `9bef1128717f958171a4afac3ed78ee2bb4e86ce`. Наберите `sha1sum baserom.us.z64` в строке терминала и проверьте, подходит ли для извлечения ассетов или нет.
 
-7. Измените `Makefile` с помощью патча:
+7. Готовьтесь к выполнению сборки:
 ```
-tools/apply_patch.sh patch_makefile_rus_diff3.patch
-```
-
-8. Готовьтесь к выполнению сборки:
-```
-make TARGET_N64=1
+./build_content.sh && make TARGET_N64=1 COMPARE=0 GRUCODE=f3dzex
 ```
 Примечания:
 
-- Для русификации установлены параметры сборки по умолчанию: Версия - США, Сравнить - НЕТ, Микрокод - Fast3DZEX.
 - Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
 - Если есть пакет `gcc-mips-linux-gnu`, добавьте `COMPILER=gcc`, чтобы не тратить время выполнения сборки инструментов.
 - После выполнения сборки игры для N64 с поддержкой микрокода Fast3DEX или Fast3DEX2, видеоплагин GlideN64 не поддерживает таких микрокодов.
 - Выполнение сборки игры для N64 с поддержкой микрокода Fast3D OLD или Fast3D NEW практически НЕВОЗМОЖНО - игра столкнётся.
 
-9. В результате сборки ваша игра для N64 будет находится там: `build/us/sm64.us.z64`
+8. В результате сборки ваша игра для N64 будет находится там: `build/us/sm64.us.z64`
 
 #### Windows
 
@@ -112,15 +105,13 @@ wsl --install
 
 #### Linux
 
-1. Запустите терминал и установите следующие пакеты (Ubuntu или Debian):
+1. Запустите терминал и установите следующие пакеты (Ubuntu):
 ```
-sudo apt install git build-essential python3 pkgconf libusb-1.0-0-dev libsdl2-dev patch
+sudo apt install git build-essential pkgconf libusb-1.0-0-dev libsdl2-dev
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
 
-Примечания:
-- В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
-- `patch` нужен для изменений в `Makefile`.
+Примечание: в состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
@@ -143,18 +134,13 @@ cd sm64-port
 
 Примечание: Этот ROM должен совпадать SHA1: `9bef1128717f958171a4afac3ed78ee2bb4e86ce`. Наберите `sha1sum baserom.us.z64` в строке терминала и проверьте, подходит ли для извлечения ассетов или нет.
 
-7. Измените `Makefile` с помощью патча:
+7. Готовьтесь к выполнению сборки:
 ```
-tools/apply_patch.sh patch_makefile_rus_diff3.patch
-```
-
-8. Готовьтесь к выполнению сборки:
-```
-make
+./build_content.sh && make
 ```
 Примечание: Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
 
-9. В результате сборки ваша игра для Linux будет находится там: `build/us_pc/sm64.us`
+8. В результате сборки ваша игра для Linux будет находится там: `build/us_pc/sm64.us`
 
 #### Windows
 
@@ -165,12 +151,10 @@ make
 2. Запустите один из терминалов MSYS2 MinGW и установите пакеты, которые вам нужны (НЕ запустите MSYS2 MSYS, MSYS2 CLANG или MSYS2 CLANGARM):
 
 - 64 бит:
-	+ а) запустите MSYS2 MinGW64 и установите: `pacman -S git make python3 mingw-w64-x86_64-gcc patch`
-	+ б) запустите MSYS2 UCRT64 и установите: `pacman -S git make python3 mingw-w64-ucrt-x86_64-gcc patch`
-- 32 бита: запустите MSYS2 MinGW32 и установите: `pacman -S git make python3 mingw-w64-i686-gcc patch`
+	+ а) запустите MSYS2 MinGW64 и установите: `pacman -S git make python3 mingw-w64-x86_64-gcc`
+	+ б) запустите MSYS2 UCRT64 и установите: `pacman -S git make python3 mingw-w64-ucrt-x86_64-gcc`
+- 32 бита: запустите MSYS2 MinGW32 и установите: `pacman -S git make python3 mingw-w64-i686-gcc`
 - НЕ установите следующий пакет называющийся простым `gcc` для MSYS2 MSYS.
-
-Примечание: `patch` нужен для изменений в `Makefile`.
 
 3. В терминале MSYS2 есть текущий рабочий каталог, который изначально называется `C:\msys64\home\<имя пользователя>` (домашний каталог). В командной строке текущий рабочий каталог будет выделен желтым цветом. `~` - это псевдоним домашнего каталога. Вы можете изменить текущий рабочий каталог на "Рабочий стол", введя `cd /c/Users/<имя пользователя>/Desktop`.
 
@@ -195,21 +179,16 @@ cd sm64-port
 
 Примечание: Этот ROM должен совпадать SHA1: `9bef1128717f958171a4afac3ed78ee2bb4e86ce`. Наберите `sha1sum baserom.us.z64` в строке терминала и проверьте, подходит ли для извлечения ассетов или нет.
 
-9. Измените `Makefile` с помощью патча:
+9. Готовьтесь к выполнению сборки:
 ```
-tools/apply_patch.sh patch_makefile_rus_diff3.patch
-```
-
-10. Готовьтесь к выполнению сборки:
-```
-make
+./build_content.sh && make
 ```
 Примечания:
 - Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
 - Если есть графический компонент DirectX 12, добавьте `ENABLE_DX12=1`.
 - НЕ выполняйте сборку игры для Windows с поддержкой OpenGL.
 
-11. В результате сборки ваша игра для Windows будет находится там: `build/us_pc/sm64.us.exe`
+10. В результате сборки ваша игра для Windows будет находится там: `build/us_pc/sm64.us.exe`
 
 ### Выполнение сборки игры для другой платформы (Android, PS4 и т.д.)
 
@@ -230,13 +209,9 @@ git clone https://github.com/AlexN-SM64/sm64-rus
 popd
 ```
 
-4. Установите пакет `patch`:
-- Linux / WSL (Ubuntu): `sudo apt install patch`
-- MSYS2: `pacman -S patch`
-
-5. Измените `Makefile` с помощью патча:
+4. Выполните сборку контента:
 ```
-tools/apply_patch.sh patch_makefile_rus.patch
+./build_content.sh
 ```
 
 Русификация теперь готова. Можно выполнить сборку!
