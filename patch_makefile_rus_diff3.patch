@@ -1,0 +1,20 @@
+diff --git a/Makefile b/Makefile
+index cfac1e8..82fd166 100644
+--- a/Makefile
++++ b/Makefile
+@@ -6,12 +6,14 @@ include util.mk
+ default: all
+ 
+ # Preprocessor definitions
+-DEFINES :=
++DEFINES := DIFF_3=1
+ 
+ #==============================================================================#
+ # Build Options                                                                #
+ #==============================================================================#
+ 
++include rus_build_options.mk
++
+ # These options can either be set by building with 'make SETTING=value'.
+ # 'make clean' may be required first.
+ 
