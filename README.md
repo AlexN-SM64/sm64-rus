@@ -45,7 +45,7 @@
 
 1. Запустите терминал и установите следующие пакеты (Ubuntu):
 ```
-sudo apt install git build-essential binutils-mips-linux-gnu pkgconf libcapstone-dev
+sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf libcapstone-dev patch
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
 
@@ -56,6 +56,7 @@ sudo apt install git build-essential binutils-mips-linux-gnu pkgconf libcapstone
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC) для компилятора,
 уберите `pkgconf` и `libcapstone-dev` в строке терминала и установите `gcc-mips-linux-gnu`.
 - В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
+- `patch` нужен для изменений в `Makefile`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
@@ -113,11 +114,13 @@ wsl --install
 
 1. Запустите терминал и установите следующие пакеты (Ubuntu):
 ```
-sudo apt install git build-essential pkgconf libusb-1.0-0-dev libsdl2-dev
+sudo apt install git build-essential python3 pkgconf libusb-1.0-0-dev libsdl2-dev patch
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
 
-Примечание: в состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
+Примечания:
+- В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
+- `patch` нужен для изменений в `Makefile`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
