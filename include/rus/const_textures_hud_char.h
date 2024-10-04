@@ -81,12 +81,12 @@ ALIGNED8 static const DIFF_TEXTURE texture_hud_char_cyrillic_ya[] = {
 #include "textures/segment2/texture_hud_char_cyrillic_ya.rgba16.inc.c"
 };
 
-ALIGNED8 static const DIFF_TEXTURE texture_hud_char_umlaut[] = {
-#include "textures/segment2/texture_hud_char_umlaut.rgba16.inc.c"
+ALIGNED8 static const DIFF_TEXTURE texture_hud_char_diaeresis[] = {
+#include "textures/segment2/texture_hud_char_diaeresis.rgba16.inc.c"
 };
 
-ALIGNED8 static const DIFF_TEXTURE texture_hud_char_short[] = {
-#include "textures/segment2/texture_hud_char_short.rgba16.inc.c"
+ALIGNED8 static const DIFF_TEXTURE texture_hud_char_breve[] = {
+#include "textures/segment2/texture_hud_char_breve.rgba16.inc.c"
 };
 
 #endif // This will be used in "bin/segment2.c"

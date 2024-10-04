@@ -1,7 +1,7 @@
 #include "define_diff_change.h"
 
 ALIGNED8 static const DIFF_TEXTURE castle_grounds_seg7_us_texture_0700EAE8[] = {
-#include "levels/castle_grounds/peach_signature_letter_rus.ia8.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "levels/castle_grounds/peach_signature_letter_rus.i8.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 /*
 #include "levels/castle_grounds/5.ia8.inc.c"
 */

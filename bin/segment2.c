@@ -1929,6 +1929,7 @@ const DIFF_TEXTURE *const main_font_lut[] = {
     texture_font_char_eu_star_hollow,
     0x0, 0x0,
 #elif defined(VERSION_US) // US Font Table
+#include "rus/const_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION
     texture_font_char_us_0, texture_font_char_us_1, texture_font_char_us_2, texture_font_char_us_3,
     texture_font_char_us_4, texture_font_char_us_5, texture_font_char_us_6, texture_font_char_us_7,
     texture_font_char_us_8, texture_font_char_us_9, texture_font_char_us_A, texture_font_char_us_B,
@@ -1953,24 +1954,11 @@ const DIFF_TEXTURE *const main_font_lut[] = {
     texture_font_char_us_button_A, texture_font_char_us_button_B, texture_font_char_us_button_C, texture_font_char_us_button_Z,
     texture_font_char_us_button_R,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
+FONT_MARKS_RUS               0x0,
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0, texture_font_char_us_comma,
-#include "rus/const_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION -- 11x4 SYMBOLS IS HERE
-/* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
-*/
+FONT_CHARS_RUS               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0, texture_font_char_us_slash,
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0,               0x0,

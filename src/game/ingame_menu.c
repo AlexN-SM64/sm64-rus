@@ -87,8 +87,9 @@ u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
 /* REMOVED IN RUSSIAN VERSION, BUT COMMENTED TO ORIGIN
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5,  6,
+    0,  0,  0,  0,  0,  0,  0,  0,  0,
 */
+                                        0,  0,  0,  0,  0,  5,  6, 
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #endif
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -325,8 +326,6 @@ void render_uppercase_diacritic(s16 *xPos, s16 *yPos, u8 letter, u8 diacritic) {
 }
 #endif // VERSION_EU
 
-#include "rus/ingame_menu/render_char_special.h" //! ONLY IN RUSSIAN VERSION
-
 #if !defined(VERSION_JP) && !defined(VERSION_SH)
 struct MultiTextEntry {
     u8 length;
@@ -441,7 +440,7 @@ void print_generic_string(s16 x, s16 y, const u8 *str) {
                 render_lowercase_diacritic(&xCoord, &yCoord, DIALOG_CHAR_I_NO_DIA, str[strPos] & 0xF);
                 break;
 #else // i.e. not EU
-#include "rus/ingame_menu/switch_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_special_letters.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
                 break;
@@ -499,12 +498,15 @@ void print_generic_string(s16 x, s16 y, const u8 *str) {
                 break;
 #else
                 render_generic_char(str[strPos]);
+#include "rus/ingame_menu/render_marks.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+/*
                 if (mark != DIALOG_MARK_NONE) {
                     create_dl_translation_matrix(MENU_MTX_PUSH, 5.0f, 5.0f, 0.0f);
                     render_generic_char(mark + 0xEF);
                     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
                     mark = DIALOG_MARK_NONE;
                 }
+*/
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
                 create_dl_translation_matrix(MENU_MTX_NOPUSH, 10.0f, 0.0f, 0.0f);
@@ -538,12 +540,11 @@ void print_hud_char_umlaut(s16 x, s16 y, u8 chr) {
 }
 #endif
 
-#include "rus/ingame_menu/print_hud_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
-
 /**
  * Prints a hud string depending of the hud table list defined.
  */
 void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
+	s8 mark = DIALOG_MARK_NONE; // ONLY IN RUSSIAN VERSION
     s32 strPos = 0;
     void **hudLUT1 = segmented_to_virtual(menu_hud_lut); // Japanese Menu HUD Color font
     void **hudLUT2 = segmented_to_virtual(main_hud_lut); // 0-9 A-Z HUD Color Font
@@ -603,6 +604,8 @@ void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
                 gSPTextureRectangle(gDisplayListHead++, curX << 2, curY << 2, (curX + 16) << 2,
                                     (curY + 16) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
 
+#include "rus/ingame_menu/render_hud_marks.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+
                 curX += xStride;
 #ifndef VERSION_JP
         }
@@ -627,8 +630,6 @@ void print_menu_char_umlaut(s16 x, s16 y, u8 chr) {
 }
 #endif
 
-#include "rus/ingame_menu/print_menu_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
-
 void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
     UNUSED s8 mark = DIALOG_MARK_NONE; // unused in EU
     s32 strPos = 0;
@@ -652,7 +653,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
                 curX += gDialogCharWidths[str[strPos]];
                 break;
 #else
-#include "rus/ingame_menu/switch_menu_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_special_letters.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
                 break;
@@ -671,6 +672,8 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
                                     (curY + 8) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
 
 #ifndef VERSION_EU
+#include "rus/ingame_menu/render_menu_char_other.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+/*
                 if (mark != DIALOG_MARK_NONE) {
                     gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_IA, G_IM_SIZ_8b, 1, fontLUT[mark + 0xEF]);
                     gDPLoadSync(gDisplayListHead++);
@@ -680,6 +683,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
 
                     mark = DIALOG_MARK_NONE;
                 }
+*/
 #endif
 #if defined(VERSION_JP) || defined(VERSION_SH)
                 curX += 9;
@@ -690,8 +694,6 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
         strPos++;
     }
 }
-
-#include "rus/ingame_menu/print_credits_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 void print_credits_string(s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
@@ -708,17 +710,20 @@ void print_credits_string(s16 x, s16 y, const u8 *str) {
 
     while (str[strPos] != GLOBAR_CHAR_TERMINATOR) {
         switch (str[strPos]) {
-#include "rus/ingame_menu/switch_credits_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
             case GLOBAL_CHAR_SPACE:
                 curX += 4;
                 break;
             default:
                 gDPPipeSync(gDisplayListHead++);
+#include "rus/ingame_menu/render_credits_char_other.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+/*
                 gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, fontLUT[str[strPos]]);
                 gDPLoadSync(gDisplayListHead++);
                 gDPLoadBlock(gDisplayListHead++, G_TX_LOADTILE, 0, 0, 8 * 8 - 1, CALC_DXT(8, G_IM_SIZ_16b_BYTES));
                 gSPTextureRectangle(gDisplayListHead++, curX << 2, curY << 2, (curX + 8) << 2,
                                     (curY + 8) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
+*/
+
                 curX += 7;
                 break;
         }
@@ -1432,7 +1437,9 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
                     }
 
                     render_generic_char(strChar);
+#include "rus/ingame_menu/render_dialog_marks.h" //! INCLUDED ONLY IN RUSSIAN VERSION
                     create_dl_translation_matrix(MENU_MTX_NOPUSH, (f32)(gDialogCharWidths[strChar]), 0, 0);
+
                     xMatrix = 1;
                     linePos++;
                 }

@@ -12,16 +12,12 @@
 
 // ONLY IN RUSSIAN VERSION
 
+#include "text_menu_strings.h"
+
 /**
  * Меню выбора файла
  */
 // Выбор файла
-#define TEXT_NEW _("~Н~О~В~Ы~Й")
-#define TEXT_SELECT_FILE _("~В~Ы~Б~Р~А~Т~Ь ~Ф~А~Й~Л")
-#define TEXT_CHECK_FILE _("~П~О~К~А~З~А~Т~Ь ~С~Ч~Ё~Т")
-#define TEXT_COPY_FILE _("~К~О~П~И~Р~О~В~А~Т~Ь ~Ф~А~Й~Л")
-#define TEXT_ERASE_FILE _("~С~Т~Е~Р~Е~Т~Ь ~Ф~А~Й~Л")
-#define TEXT_SOUND_SELECT _("~В~Ы~Б~Р~А~Т~Ь ~З~В~У~К")
 #define TEXT_FILE_MARIO_A _("МАРИО А")
 #define TEXT_FILE_MARIO_B _("МАРИО Б")
 #define TEXT_FILE_MARIO_C _("МАРИО В")
@@ -48,7 +44,6 @@
 #define TEXT_ERASE_FILE_BUTTON _("СТЕРЕТЬ ФАЙЛ")
 
 // Меню счёта
-#define TEXT_MARIO _("~М~А~Р~И~О")
 #define TEXT_HI_SCORE _("РЕКОРД")
 #define TEXT_MY_SCORE _("МОЙ СЧЁТ")
 #define TEXT_SCORE_MARIO_A _("☺А")
@@ -76,7 +71,6 @@
 #define TEXT_CONTINUE _("ПРОДОЛЖИТЬ")
 #define TEXT_EXIT_COURSE _("ВЫЙТИ ИЗ КУРСА")
 #define TEXT_CAMERA_ANGLE_R _("УСТАНОВИТЬ РАКУРС КАМЕРЫ С [R]")
-#define TEXT_PAUSE _("~П~А~У~З~А")
 
 // Настройки камеры
 #define TEXT_LAKITU_MARIO _("ЛАКИТУ + МАРИО")
@@ -85,10 +79,8 @@
 #define TEXT_NORMAL_FIXED _("(ОБЫЧНЫЙ)(ФИКСИР.)")
 
 // Курс пройден
-#define TEXT_HUD_CONGRATULATIONS _("~П~О~З~Д~Р~А~В~Л~Я~Е~М")
 #define TEXT_CATCH _("") // Не используется
 #define TEXT_CLEAR _("ПРОЙДЕН")
-#define TEXT_HUD_HI_SCORE _("~Р~Е~К~О~Р~Д")
 
 // Настройки сохранения
 #define TEXT_SAVE_AND_CONTINUE _("СОХРАНИТЬ И ПРОДОЛЖИТЬ")

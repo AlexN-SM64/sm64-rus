@@ -1615,6 +1615,7 @@ const DIFF_TEXTURE *const menu_font_lut[] = {
     0x0,                      texture_menu_font_char_jp_coin, texture_menu_font_char_jp_star_filled, texture_menu_font_char_jp_multiply,
     0x0,                      0x0,                      0x0,                      0x0,
 #else
+#include "rus/const_menu_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION
     texture_menu_font_char_0, texture_menu_font_char_1, texture_menu_font_char_2, texture_menu_font_char_3,
     texture_menu_font_char_4, texture_menu_font_char_5, texture_menu_font_char_6, texture_menu_font_char_7,
     texture_menu_font_char_8, texture_menu_font_char_9, texture_menu_font_char_A, texture_menu_font_char_B,
@@ -1639,11 +1640,12 @@ const DIFF_TEXTURE *const menu_font_lut[] = {
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
-          0x0,       0x0,       0x0,       0x0,
+          MENU_FONT_MARKS_RUS
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0, texture_menu_font_char_comma,
-#include "rus/const_menu_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION -- 6x4 SYMBOLS IS HERE
+          MENU_FONT_CHARS_RUS
+          0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
