@@ -75,8 +75,8 @@
 // Настройки камеры
 #define TEXT_LAKITU_MARIO _("ЛАКИТУ + МАРИО")
 #define TEXT_LAKITU_STOP _("ЛАКИТУ + СТОП")
-#define TEXT_NORMAL_UPCLOSE _("(ОБЫЧНЫЙ)(ВБЛИЗИ)")
-#define TEXT_NORMAL_FIXED _("(ОБЫЧНЫЙ)(ФИКСИР.)")
+#define TEXT_NORMAL_UPCLOSE __("(ОБЫЧНЫЙ)(ВБЛИЗИ)")
+#define TEXT_NORMAL_FIXED __("(ОБЫЧНЫЙ)(ФИКСИР.)")
 
 // Курс пройден
 #define TEXT_CATCH _("") // Не используется
