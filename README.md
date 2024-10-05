@@ -53,7 +53,7 @@ sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf lib
 
 - `libcapstone-dev` нужен для компиляции с помощью компилятора SGI IRIS Development Option (IDO),
 которого используется для выполнения сборки N64 ROM с соответствиями.
-Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC) для компилятора,
+Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC),
 уберите `pkgconf` и `libcapstone-dev` в строке терминала и установите `gcc-mips-linux-gnu`.
 - В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 - `patch` нужен для изменений в `Makefile`.
