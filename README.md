@@ -84,6 +84,11 @@ cd sm64-port
 tools/apply_patch.sh patch_makefile_rus_diff3.patch
 ```
 
+Если нужно выполнить сборку для китайской приставки iQue Player, выполните патч:
+```
+tools/apply_patch.sh enhancements/ique_support.patch
+```
+
 8. Готовьтесь к выполнению сборки:
 ```
 bash build_content.sh && make TARGET_N64=1
