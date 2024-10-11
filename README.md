@@ -47,7 +47,7 @@
 ```
 sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf libcapstone-dev patch
 ```
-Важно: Перед установкой сначала обновите список пакетов: `sudo apt-get update`
+Важно: Перед установкой сначала выполните обновление списка пакетов: `sudo apt-get update`
 
 Примечания:
 
@@ -120,7 +120,7 @@ wsl --install
 ```
 sudo apt install git build-essential python3 pkgconf libusb-1.0-0-dev libsdl2-dev patch
 ```
-Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
+Важно: Перед установкой сначала выполните обновление списка пакетов: `sudo apt-get update`
 
 Примечание: В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 
