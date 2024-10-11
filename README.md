@@ -47,7 +47,7 @@
 ```
 sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf libcapstone-dev patch
 ```
-Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
+Важно: Перед установкой сначала обновите список пакетов: `sudo apt-get update`
 
 Примечания:
 
@@ -56,7 +56,6 @@ sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf lib
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC),
 уберите `pkgconf` и `libcapstone-dev` в строке терминала и установите `gcc-mips-linux-gnu`.
 - В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
-- `patch` нужен для изменений в `Makefile`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
@@ -84,7 +83,7 @@ cd sm64-port
 tools/apply_patch.sh patch_makefile_rus_diff3.patch
 ```
 
-Если нужно выполнить сборку для китайской приставки iQue Player, выполните патч:
+Примечание: Если нужно выполнить сборку для китайской приставки iQue Player, выполните патч:
 ```
 tools/apply_patch.sh enhancements/ique_support.patch
 ```
@@ -123,9 +122,7 @@ sudo apt install git build-essential python3 pkgconf libusb-1.0-0-dev libsdl2-de
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo apt-get update && sudo apt-get upgrade`
 
-Примечания:
-- В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
-- `patch` нужен для изменений в `Makefile`.
+Примечание: В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
 ```
@@ -153,6 +150,11 @@ cd sm64-port
 tools/apply_patch.sh patch_makefile_rus_diff3.patch
 ```
 
+Примечание: Если нужно выполнить сборку для ПК с поддержкой 60 FPS, выполните патч:
+```
+tools/apply_patch.sh enhancements/60fps.patch
+```
+
 8. Готовьтесь к выполнению сборки:
 ```
 bash build_content.sh && make
@@ -163,19 +165,24 @@ bash build_content.sh && make
 
 #### Windows
 
-1. Скачайте и установите набор терминалов MSYS2 (включая MinGW32, MinGW64 и UCRT64) для Windows - версию от 7 мая 2024 г.: https://github.com/msys2/msys2-installer/releases/tag/2024-05-07
+1. Скачайте и установите набор терминалов MSYS2 (включая MinGW32, MinGW64 и UCRT64) для Windows: https://msys2.org
 
-Важно: Запуск MSYS2 требуется Windows 8.1 или новее для систем x64. Убедительная просьба НИЧЕГО НЕ ОБНОВЛЯТЬ этот терминал и следующие пакеты - выполнение сборки инструмента ARMIPS критически столкнётся.
+Важно: Запуск MSYS2 требуется Windows 8.1 или новее для систем x64. После запуска сначала обновите терминал, введя `pacman -Syu`.
 
-2. Запустите один из терминалов MSYS2 MinGW и установите пакеты, которые вам нужны (НЕ запустите MSYS2 MSYS, MSYS2 CLANG или MSYS2 CLANGARM):
+2. Запустите один из терминалов MSYS2 MinGW (MinGW64, MinGW32 или UCRT64) и установите пакеты, которые вам нужны (НЕ запустите MSYS2 MSYS, MSYS2 CLANG или MSYS2 CLANGARM):
 
+2.1. Сначала установите базовые пакеты:
+```
+pacman -S git make python3 patch
+```
+
+2.2. Затем установите дополнительный пакет GCC (версия 13.2.0-6 для MSYS2 MinGW):
 - 64 бит:
-	+ а) запустите MSYS2 MinGW64 и установите: `pacman -S git make python3 mingw-w64-x86_64-gcc patch`
-	+ б) запустите MSYS2 UCRT64 и установите: `pacman -S git make python3 mingw-w64-ucrt-x86_64-gcc patch`
-- 32 бита: запустите MSYS2 MinGW32 и установите: `pacman -S git make python3 mingw-w64-i686-gcc patch`
-- НЕ установите следующий пакет называющийся простым `gcc` для MSYS2 MSYS.
+	+ а) В MinGW64: `pacman -U https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst`
+	+ б) В UCRT64: `pacman -U https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst`
+- 32 бита: В MinGW32: `pacman -U https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst`
 
-Примечание: `patch` нужен для изменений в `Makefile`.
+Важно: НЕ обновляйте GCC для MSYS2 MinGW до версии 14 - выполнение сборки инструмента ARMIPS критически столкнётся.
 
 3. В терминале MSYS2 есть текущий рабочий каталог, который изначально называется `C:\msys64\home\<имя пользователя>` (домашний каталог). В командной строке текущий рабочий каталог будет выделен желтым цветом. `~` - это псевдоним домашнего каталога. Вы можете изменить текущий рабочий каталог на "Рабочий стол", введя `cd /c/Users/<имя пользователя>/Desktop`.
 
@@ -203,6 +210,11 @@ cd sm64-port
 9. Измените `Makefile` с помощью патча:
 ```
 tools/apply_patch.sh patch_makefile_rus_diff3.patch
+```
+
+Примечание: Если нужно выполнить сборку для ПК с поддержкой 60 FPS, выполните патч:
+```
+tools/apply_patch.sh enhancements/60fps.patch
 ```
 
 10. Готовьтесь к выполнению сборки:
