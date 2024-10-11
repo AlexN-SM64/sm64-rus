@@ -118,7 +118,7 @@ wsl --install kali-linux
 
 #### Linux
 
-1. Запустите терминал и установите следующие пакеты (Ubuntu):
+1. Запустите терминал и установите следующие пакеты (Ubuntu / Debian / Kali Linux):
 ```
 sudo apt install git build-essential libusb-1.0-0-dev libsdl2-dev bsdextrautils
 ```
