@@ -43,9 +43,9 @@
 
 #### Linux
 
-1. Запустите терминал и установите следующие пакеты (Ubuntu):
+1. Запустите терминал и установите следующие пакеты (Ubuntu / Debian / Kali Linux):
 ```
-sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf libcapstone-dev patch
+sudo apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils
 ```
 Важно: Перед установкой сначала выполните обновление списка пакетов: `sudo apt-get update`
 
@@ -54,7 +54,7 @@ sudo apt install git build-essential python3 binutils-mips-linux-gnu pkgconf lib
 - `libcapstone-dev` нужен для компиляции с помощью компилятора SGI IRIS Development Option (IDO),
 которого используется для выполнения сборки N64 ROM с соответствиями.
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC),
-уберите `pkgconf` и `libcapstone-dev` в строке терминала и установите `gcc-mips-linux-gnu`.
+уберите `pkgconf`, `libcapstone-dev` и `binutils-mips-linux-gnu` в строке терминала и установите `gcc-mips-linux-gnu`.
 - В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 
 2. Клонируйте основной репозиторий, где есть исходный код игры:
@@ -104,9 +104,11 @@ bash build_content.sh && make TARGET_N64=1
 
 #### Windows
 
-1. Запустите один из терминалов (Командная строка или Windows PowerShell) от имени администратора и установите подсистему Windows для Linux (WSL) и встроенный дистрибутив:
+1. Запустите один из терминалов (Командная строка или Windows PowerShell) от имени администратора и установите подсистему Windows для Linux (WSL) и один дистрибутив (Ubuntu / Debian / Kali Linux):
 ```
-wsl --install
+wsl --install ubuntu
+wsl --install debian
+wsl --install kali-linux
 ```
 Важно: WSL требуется Windows 10 версия 1903 или новее для систем x64. После установки WSL вам потребуется перезагрузить компьютер и войти снова, чтобы продолжить.
 
@@ -118,7 +120,7 @@ wsl --install
 
 1. Запустите терминал и установите следующие пакеты (Ubuntu):
 ```
-sudo apt install git build-essential python3 pkgconf libusb-1.0-0-dev libsdl2-dev patch
+sudo apt install git build-essential libusb-1.0-0-dev libsdl2-dev bsdextrautils
 ```
 Важно: Перед установкой сначала выполните обновление списка пакетов: `sudo apt-get update`
 
