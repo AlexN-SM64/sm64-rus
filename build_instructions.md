@@ -207,15 +207,6 @@ sudo pacman -S base-devel python capstone
 ```
 Важно: Перед установкой сначала выполните обновление: `sudo pacman -Syu`
 
-б) Затем понизьте GCC до версии 13.2.1-6:
-```
-sudo pacman -U https://archive.archlinux.org/packages/g/gcc/gcc-13.2.1-6-x86_64.pkg.tar.zst \
-https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.tar.zst
-```
-Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS критически столкнётся.
-
-в) Потом установите AUR-пакет [mips64-elf-binutils](https://aur.archlinux.org/packages/mips64-elf-binutils).
-
 Примечания:
 
 ++ `capstone` нужен для компиляции с помощью компилятора SGI IRIS Development Option (IDO),
@@ -224,6 +215,15 @@ https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.t
 уберите `capstone` в строке терминала и выполните установку базовых пакетов, затем установите AUR-пакет [mips64-elf-gcc](https://aur.archlinux.org/packages/mips64-elf-gcc).
 
 ++ В состав `base-devel` входят пакеты: `make`, `pkgconf` и `gcc`.
+
+б) Затем понизьте GCC до версии 13.2.1-6:
+```
+sudo pacman -U https://archive.archlinux.org/packages/g/gcc/gcc-13.2.1-6-x86_64.pkg.tar.zst \
+https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.tar.zst
+```
+Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS критически столкнётся.
+
+в) Потом установите AUR-пакет [mips64-elf-binutils](https://aur.archlinux.org/packages/mips64-elf-binutils).
 
 Если не получается установить другие пакеты на других дистрибутивах Linux, установите [Docker](https://www.docker.com/) и перейдите [в раздел](#docker) снизу.
 
