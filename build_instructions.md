@@ -187,6 +187,7 @@ sudo apt install git build-essential python3 pkgconf libcapstone-dev binutils-mi
 которого используется для выполнения сборки N64 ROM с соответствиями.
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC),
 уберите `pkgconf`, `libcapstone-dev` и `binutils-mips-linux-gnu` в строке терминала и установите `gcc-mips-linux-gnu`.
+
 ++ В состав `build-essential` входят пакеты: `make`, `gcc` и `g++`.
 
 - На основе Arch Linux (не тестировано):
@@ -203,6 +204,7 @@ sudo pacman -S base-devel python capstone
 которого используется для выполнения сборки N64 ROM с соответствиями.
 Чтобы не тратить время выполнения, но если вы хотите использовать GNU C Compiler (GCC),
 уберите `capstone` в строке терминала и выполните установку базовых пакетов, затем установите AUR-пакет [mips64-elf-gcc](https://aur.archlinux.org/packages/mips64-elf-gcc).
+
 ++ В состав `base-devel` входят пакеты: `make`, `pkgconf` и `gcc`.
 
 Если не получается установить другие пакеты на других дистрибутивах Linux, установите [Docker](https://www.docker.com/) и перейдите [в раздел](#docker) снизу.
