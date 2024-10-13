@@ -34,6 +34,20 @@ https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.ta
 
 Важно: НЕ обновляйте GCC для MSYS2 MinGW до версии 14 - выполнение сборки инструмента ARMIPS критически столкнётся.
 
+2.3. Если нужно выполнить сборку игры для Windows с поддержкой OpenGL, установите SDL2 и glew:
+- В MSYS2 MinGW64 (для сборки игры для Windows x64):
+```
+pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-glew
+```
+- В MSYS2 UCRT64 (для сборки игры для Windows x64):
+```
+pacman -S mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-glew
+```
+- В MSYS2 MinGW32 (для сборки игры для Windows x86):
+```
+pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-glew
+```
+
 3. В терминале MSYS2 есть текущий рабочий каталог, который изначально называется `C:\msys64\home\<имя пользователя>` (домашний каталог). В командной строке текущий рабочий каталог будет выделен желтым цветом. `~` - это псевдоним домашнего каталога. Вы можете изменить текущий рабочий каталог на "Рабочий стол", введя `cd /c/Users/<имя пользователя>/Desktop`.
 
 4. Клонируйте основной репозиторий, где есть исходный код игры:
@@ -71,9 +85,37 @@ bash build_content.sh && make
 Примечания:
 - Если есть ядра в процессоре, добавьте `-j$(nproc)`, где `$(nproc)` - количество ядер в процессоре, чтобы ускорить процесс сборки.
 - Если есть графический компонент DirectX 12, добавьте `ENABLE_DX12=1`.
-- НЕ выполняйте сборку игры для Windows с поддержкой OpenGL.
+- Если есть графический компонент OpenGL, добавьте `ENABLE_OPENGL=1`.
 
 11. В результате сборки ваша игра для Windows будет находиться там: `build/us_pc/sm64.us.exe`
+
+12. Теперь после сборки игры для Windows с поддержкой OpenGL, скопируйте необходимые расширения сюда:
+- В MSYS2 MinGW64:
+```
+cp /mingw64/bin/glew32.dll          build/us_pc/glew32.dll          &&
+cp /mingw64/bin/libgcc_s_seh-1.dll  build/us_pc/libgcc_s_seh-1.dll  &&
+cp /mingw64/bin/libstdc++-6.dll     build/us_pc/libstdc++-6.dll     &&
+cp /mingw64/bin/libwinpthread-1.dll build/us_pc/libwinpthread-1.dll &&
+cp /mingw64/bin/SDL2.dll            build/us_pc/SDL2.dll
+```
+- В MSYS2 MinGW32:
+```
+cp /mingw32/bin/glew32.dll          build/us_pc/glew32.dll          &&
+cp /mingw32/bin/libgcc_s_dw2-1.dll  build/us_pc/libgcc_s_dw2-1.dll  &&
+cp /mingw32/bin/libstdc++-6.dll     build/us_pc/libstdc++-6.dll     &&
+cp /mingw32/bin/libwinpthread-1.dll build/us_pc/libwinpthread-1.dll &&
+cp /mingw32/bin/SDL2.dll            build/us_pc/SDL2.dll
+```
+- В MSYS2 UCRT64:
+```
+cp /ucrt64/bin/glew32.dll          build/us_pc/glew32.dll          &&
+cp /ucrt64/bin/libgcc_s_seh-1.dll  build/us_pc/libgcc_s_seh-1.dll  &&
+cp /ucrt64/bin/libstdc++-6.dll     build/us_pc/libstdc++-6.dll     &&
+cp /ucrt64/bin/libwinpthread-1.dll build/us_pc/libwinpthread-1.dll &&
+cp /ucrt64/bin/SDL2.dll            build/us_pc/SDL2.dll
+```
+
+Предупреждение: Запуск игры для Windows с поддержкой OpenGL может ускорится в 2 раза быстрее. А чтобы замедлить, выполните 60 FPS патч и сборку игры снова.
 
 ### Linux
 
