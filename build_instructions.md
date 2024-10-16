@@ -8,7 +8,7 @@
 
 К системе сборки предъявляются следующие требования к пакету:
 
-Windows (MSYS2 MinGW / MSYS2 UCRT64):
+Windows (MSYS2 UCRT64 / MSYS2 MinGW):
 
 * python3 >= 3.6
 * mingw-w64-gcc <= 13.2
@@ -24,9 +24,9 @@ Linux:
 
 Инструкции по установке пакетов приведены ниже:
 
-#### Windows - MSYS2 MinGW / MSYS2 MinGW UCRT 64-бит
+#### Windows - MSYS2 UCRT64 / MSYS2 MinGW
 
-Для того, чтобы приступить, вам необходимо установить и обновить [MSYS2](https://msys2.org). Потом перед установкой пакетов не забудьте запустить MSYS2 MinGW или MSYS2 UCRT64.
+Для того, чтобы приступить, вам необходимо установить и обновить [MSYS2](https://msys2.org). Потом перед установкой пакетов не забудьте запустить MSYS2 UCRT64 или MSYS2 MinGW.
 
 Важно: Запуск MSYS2 требуется Windows 8.1 или новее для систем x64. После запуска сначала обновите терминал и пакеты, введя `pacman -Syu`. Потом не забудьте перезапустить заново и ввести ещё раз до окончания обновления.
 
@@ -36,16 +36,36 @@ pacman -S git patch make python3
 ```
 
 2. Установите необходимый GCC 13.2:
+* В MSYS2 UCRT64:
 ```
 pacman -U \
-https://repo.msys2.org/mingw/<DIR>/mingw-w64-<CROSS>-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/<DIR>/mingw-w64-<CROSS>-gcc-libs-13.2.0-6-any.pkg.tar.zst
+https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
+https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
 ```
+* В MSYS2 MinGW 64-бит:
+```
+# Вариант 1
+pacman -U \
+https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
+https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
 
-Важно: Перед установкой вставьте значения вместо `<DIR>` и `<CROSS>`:
-* В MSYS2 MinGW 64-бит: вместо `<DIR>` - `mingw64` или `x86_64`; вместо `<CROSS>` - `x86_64`
-* В MSYS2 MinGW 32-бит: вместо `<DIR>` - `mingw32` или `i686`; вместо `<CROSS>` - `i686`
-* В MSYS2 UCRT64: вместо `<DIR>` - `ucrt64`; вместо `<CROSS>` - `ucrt-x86_64`
+# Вариант 2
+pacman -U \
+https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
+https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
+```
+* В MSYS2 MinGW 32-бит:
+```
+# Вариант 1
+pacman -U \
+https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
+https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
+
+# Вариант 2
+pacman -U \
+https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
+https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
+```
 
 Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других пакетов используйте `pacman -Syu --ignore mingw-w64-x86_64-gcc --ignore mingw-w64-x86_64-gcc-libs --ignore mingw-w64-i686-gcc --ignore mingw-w64-i686-gcc-libs --ignore mingw-w64-ucrt-x86_64-gcc --ignore mingw-w64-ucrt-x86_64-gcc-libs`
 
