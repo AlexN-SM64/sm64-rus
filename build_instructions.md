@@ -67,7 +67,7 @@ https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
 https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
 ```
 
-Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других пакетов используйте `pacman -Syu --ignore mingw-w64-x86_64-gcc --ignore mingw-w64-x86_64-gcc-libs --ignore mingw-w64-i686-gcc --ignore mingw-w64-i686-gcc-libs --ignore mingw-w64-ucrt-x86_64-gcc --ignore mingw-w64-ucrt-x86_64-gcc-libs`
+Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других пакетов используйте `pacman -Syu --ignore mingw-w64-ucrt-x86_64-gcc --ignore mingw-w64-ucrt-x86_64-gcc-libs --ignore mingw-w64-x86_64-gcc --ignore mingw-w64-x86_64-gcc-libs --ignore mingw-w64-i686-gcc --ignore mingw-w64-i686-gcc-libs`
 
 #### Linux - Debian / Ubuntu
 
