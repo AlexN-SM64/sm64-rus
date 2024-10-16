@@ -120,7 +120,7 @@ git clone https://github.com/AlexN-SM64/sm64-rus ../sm64-rus
 Поставьте ТОЛЬКО оригинальную американскую (США) версию игры Super Mario 64 N64 ROM сюда и переименуйте в `baserom.us.z64` для извлечения ассетов.
 Или в терминале:
 ```
-cp /path/to/your/baserom.us.z64 ./baserom.us.z64
+cp /path/to/your/baserom.us.z64 baserom.us.z64
 ```
 
 Примечание: Этот базовый ROM должен совпадать SHA1: `9bef1128717f958171a4afac3ed78ee2bb4e86ce`. Наберите `sha1sum baserom.us.z64 && cat sm64.us.sha1` в строке терминала и проверьте, подходит ли для извлечения ассетов или нет.
@@ -295,7 +295,7 @@ git clone https://github.com/AlexN-SM64/sm64-rus ../sm64-rus
 Поставьте ТОЛЬКО оригинальную американскую (США) версию игры Super Mario 64 N64 ROM сюда и переименуйте в `baserom.us.z64` для извлечения ассетов.
 Или в терминале:
 ```
-cp /path/to/your/baserom.us.z64 ./baserom.us.z64
+cp /path/to/your/baserom.us.z64 baserom.us.z64
 ```
 
 Примечание: Этот базовый ROM должен совпадать SHA1: `9bef1128717f958171a4afac3ed78ee2bb4e86ce`. Наберите `sha1sum baserom.us.z64 && cat sm64.us.sha1` в строке терминала и проверьте, подходит ли для извлечения ассетов или нет.
