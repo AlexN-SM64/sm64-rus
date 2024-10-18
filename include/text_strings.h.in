@@ -61,6 +61,7 @@
 #define TEXT_YES _("ДА")
 #define TEXT_NO _("НЕТ")
 #define TEXT_FILE_MARIO_A_JUST_ERASED _("МАРИО А ПРОСТО СТЁРТО")
+#define CHAR_ABCD _("АБВГ")
 
 /**
  * Игровое меню

@@ -14,4 +14,6 @@
 #define TEXT_HUD_CONGRATULATIONS _("ПОЗДРАВЛЯЕМ")
 #define TEXT_HUD_HI_SCORE _("РЕКОРД")
 
+#define CHAR_HUD_ABCD _("АБВГ")
+
 #endif
