@@ -583,7 +583,7 @@ void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
                 curX += xStride;
                 break;
 #else
-#include "rus/ingame_menu/switch_hud_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/ingame_menu/switch_special_letters.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
             case GLOBAL_CHAR_SPACE:
                 curX += 8;
                 break;
@@ -597,7 +597,7 @@ void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
                 }
 
                 if (hudLUT == HUD_LUT_GLOBAL) {
-                    gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, hudLUT2[str[strPos]]);
+#include "rus/ingame_menu/set_texture_hud_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
                 }
 
                 gSPDisplayList(gDisplayListHead++, dl_rgba16_load_tex_block);

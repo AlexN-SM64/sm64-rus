@@ -136,6 +136,5 @@
 // 126 + (233 - 135) = 224
 
 static unsigned char charABCD[] = { CHAR_ABCD };
-static unsigned char charHudABCD[] = { CHAR_HUD_ABCD };
 
 #endif

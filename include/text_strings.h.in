@@ -12,7 +12,19 @@
 
 // ONLY IN RUSSIAN VERSION
 
-#include "text_menu_strings.h"
+// ХУДы
+#define TEXT_NEW _("НОВЫЙ")
+#define TEXT_SELECT_FILE _("ВЫБРАТЬ ФАЙЛ")
+#define TEXT_CHECK_FILE _("ПОКАЗАТЬ СЧЁТ")
+#define TEXT_COPY_FILE _("КОПИРОВАТЬ ФАЙЛ")
+#define TEXT_ERASE_FILE _("СТЕРЕТЬ ФАЙЛ")
+#define TEXT_SOUND_SELECT _("ВЫБРАТЬ ЗВУК")
+#define TEXT_MARIO _("МАРИО")
+#define TEXT_PAUSE _("ПАУЗА")
+#define TEXT_HUD_CONGRATULATIONS _("ПОЗДРАВЛЯЕМ")
+#define TEXT_HUD_HI_SCORE _("РЕКОРД")
+
+#define CHAR_ABCD _("АБВГ")
 
 /**
  * Меню выбора файла
@@ -61,7 +73,6 @@
 #define TEXT_YES _("ДА")
 #define TEXT_NO _("НЕТ")
 #define TEXT_FILE_MARIO_A_JUST_ERASED _("МАРИО А ПРОСТО СТЁРТО")
-#define CHAR_ABCD _("АБВГ")
 
 /**
  * Игровое меню
