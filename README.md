@@ -8,7 +8,7 @@ SM64EX - Русская версия. На основе https://github.com/sm64p
 
 - Ещё один перевод на русский язык, включая только меню настроек, читов и др.
 - Изменения и добавления в коде (см. `src/game/options_menu.c`, `include/options_menu_strings.h.in` и т.д.)
-- Ещё больше особенностей находятся в бренче [master](https://github.com/AlexN-SM64/sm64-rus/tree/master).
+- Ещё больше особенностей находятся в бренче [master](https://github.com/AlexN-SM64/sm64-rus/tree/master#%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%80%D1%83%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8).
 
 ## Инструкция по выполнению сборки
 
