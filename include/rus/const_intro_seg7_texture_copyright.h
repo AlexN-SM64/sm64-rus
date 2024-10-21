@@ -1,11 +1,11 @@
 #ifndef RUS_CONST_INTRO_SEG7_TEXTURE_COPYRIGHT_H
 #define RUS_CONST_INTRO_SEG7_TEXTURE_COPYRIGHT_H
 
-ALIGNED8 static const u8 intro_seg7_texture_rus_version[] = {
+ALIGNED8 static const DIFF_TEXTURE intro_seg7_texture_rus_version[] = {
 #include "levels/intro/texture_rus_version.rgba16.inc.c"
 };
 
-ALIGNED8 static const u8 intro_seg7_texture_rus_copyright[] = {
+ALIGNED8 static const DIFF_TEXTURE intro_seg7_texture_rus_copyright[] = {
 #include "levels/intro/texture_rus_copyright.rgba16.inc.c"
 };
 

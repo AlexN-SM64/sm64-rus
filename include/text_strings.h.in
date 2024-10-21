@@ -26,10 +26,6 @@
 
 #define CHAR_ABCD _("АБВГ")
 
-#ifdef EXT_OPTIONS_MENU
-#include "text_options_strings.h"
-#endif
-
 /**
  * Меню выбора файла
  */
@@ -86,7 +82,6 @@
 #define TEXT_MYSCORE _("МОЙ СЧЁТ")
 #define TEXT_CONTINUE _("ПРОДОЛЖИТЬ")
 #define TEXT_EXIT_COURSE _("ВЫЙТИ ИЗ КУРСА")
-#define TEXT_EXIT_GAME _("ВЫЙТИ ИЗ ИГРЫ") //! ТОЛЬКО В SM64EX
 #define TEXT_CAMERA_ANGLE_R _("УСТАНОВИТЬ РАКУРС КАМЕРЫ С [R]")
 
 // Настройки камеры
@@ -102,7 +97,6 @@
 // Настройки сохранения
 #define TEXT_SAVE_AND_CONTINUE _("СОХРАНИТЬ И ПРОДОЛЖИТЬ")
 #define TEXT_SAVE_AND_QUIT _("СОХРАНИТЬ И ВЫЙТИ")
-#define TEXT_SAVE_EXIT_GAME _("СОХРАНИТЬ И ВЫЙТИ ИЗ ИГРЫ") //! ТОЛЬКО В SM64EX
 #define TEXT_CONTINUE_WITHOUT_SAVING _("ПРОДОЛЖИТЬ БЕЗ СОХРАНЕНИЯ")
 
 /**

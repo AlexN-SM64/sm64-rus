@@ -1,24 +1,26 @@
-#include <ultra64.h>
+#include <PR/ultratypes.h>
 
-#include "sm64.h"
+#include "define_diff_change.h"
+
 #include "audio/external.h"
-#include "game/game_init.h"
-#include "game/memory.h"
-#include "game/area.h"
-#include "game/save_file.h"
-#include "game/object_helpers.h"
-#include "game/ingame_menu.h"
-#include "game/level_update.h"
-#include "game/segment2.h"
-#include "game/segment7.h"
-#include "game/object_list_processor.h"
+#include "behavior_data.h"
 #include "engine/behavior_script.h"
 #include "engine/graph_node.h"
-#include "behavior_data.h"
-#include "text_strings.h"
-#include "star_select.h"
 #include "eu_translation.h"
-#include <prevent_bss_reordering.h>
+#include "game/area.h"
+#include "game/game_init.h"
+#include "game/ingame_menu.h"
+#include "game/level_update.h"
+#include "game/memory.h"
+#include "game/object_helpers.h"
+#include "game/object_list_processor.h"
+#include "game/save_file.h"
+#include "game/segment2.h"
+#include "game/segment7.h"
+#include "sm64.h"
+#include "star_select.h"
+#include "text_strings.h"
+#include "prevent_bss_reordering.h"
 
 #include "rus/define_star_select.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
@@ -249,7 +251,7 @@ void print_course_number(void) {
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#ifdef VERSION_JP
 #define ACT_NAME_X 158
 #else
 #define ACT_NAME_X 163
@@ -324,9 +326,6 @@ void print_act_selector_strings(void) {
 
 #ifdef VERSION_EU
     print_generic_string(get_str_x_pos_from_center(160, currLevelName + 3, 10.0f), 33, currLevelName + 3);
-#elif defined(VERSION_SH)
-    lvlNameX = get_str_x_pos_from_center_scale(160, currLevelName + 3, 10.0f);
-    print_generic_string(lvlNameX, 33, currLevelName + 3);
 #else
     lvlNameX = get_str_x_pos_from_center(160, currLevelName + 3, 10.0f);
     print_generic_string(lvlNameX, LVL_NAME_Y, currLevelName + 3); //! ONLY IN RUSSIAN VERSION
@@ -335,7 +334,7 @@ void print_act_selector_strings(void) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
 #ifdef VERSION_EU
-    print_course_number((u32)language);
+    print_course_number(language);
 #else
     print_course_number();
 #endif
@@ -348,9 +347,6 @@ void print_act_selector_strings(void) {
 
 #ifdef VERSION_EU
         print_menu_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f), 81, selectedActName);
-#elif defined(VERSION_SH)
-        actNameX = get_str_x_pos_from_center_scale(ACT_NAME_X, selectedActName, 8.0f);
-        print_menu_generic_string(actNameX, 81, selectedActName);
 #else
         actNameX = get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f);
         print_menu_generic_string(actNameX, 81, selectedActName);
@@ -361,9 +357,9 @@ void print_act_selector_strings(void) {
     for (i = 1; i <= sVisibleStars; i++) {
         starNumbers[0] = i;
 #ifdef VERSION_EU
-        print_menu_generic_string(143 - sVisibleStars * 15 + i * 30 , 38, starNumbers);
+        print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
 #else
-        print_menu_generic_string(i * 34 - sVisibleStars * 17 + 139, 38, starNumbers);
+        print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
 #endif
     }
 
@@ -396,6 +392,10 @@ s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
     sInitSelectedActNum = 0;
     sVisibleStars = 0;
     sActSelectorMenuTimer = 0;
+#ifdef NO_SEGMENTED_MEMORY
+    sSelectedActIndex = 0;
+    sSelectableStarIndex = 0;
+#endif
     sObtainedStars = save_file_get_course_star_count(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
 
     // Don't count 100 coin star
@@ -411,7 +411,7 @@ s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
 
 /**
  * Loads act selector button actions with selected act value checks.
- * Also updates objects and returns act number selected after is choosen.
+ * Also updates objects and returns act number selected after is chosen.
  */
 s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused) {
     if (sActSelectorMenuTimer >= 11) {
@@ -423,10 +423,14 @@ s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused
 #else
         if ((gPlayer3Controller->buttonPressed & (A_BUTTON | START_BUTTON | B_BUTTON | Z_TRIG))) {
 #endif
-#if defined(VERSION_JP) || defined(VERSION_SH)
-            play_sound(SOUND_MENU_STAR_SOUND, gDefaultSoundArgs);
+#if defined(VERSION_JP)
+            play_sound(SOUND_MENU_STAR_SOUND, DIFF_GLOBAL_SOUND_SOURCE);
 #else
-            play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, gDefaultSoundArgs);
+            play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, DIFF_GLOBAL_SOUND_SOURCE);
+#endif
+#if ENABLE_RUMBLE
+            queue_rumble_data(60, 70);
+            func_sh_8024C89C(1);
 #endif
             if (sInitSelectedActNum >= sSelectedActIndex + 1) {
                 sLoadedActNum = sSelectedActIndex + 1;
