@@ -12,12 +12,16 @@ else
 
 	./texture_convert.sh rgba16 actors/power_meter
 	./texture_convert.sh ia8 levels/castle_grounds
-	./texture_convert.sh rgba16 levels/ending
 	./texture_convert.sh rgba16 levels/intro
 	./texture_convert.sh rgba16 levels/menu
 	./texture_convert.sh ia8 levels/menu
 	./texture_convert.sh rgba16 textures/segment2
 	./texture_convert.sh ia4 textures/segment2
 	./texture_convert.sh rgba16 textures/title_screen_bg
+
+	cp source_textures/levels/ending/cake.png source_textures/levels/ending/cake.rgba16.png
+	./texture_convert.sh rgba16 levels/ending
+	mv -f levels/ending/cake.rgba16.png levels/ending/cake.png
+	rm -f source_textures/levels/ending/cake.rgba16.png
 
 fi
