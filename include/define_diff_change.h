@@ -1,6 +1,12 @@
 #ifndef DEFINE_DIFF_CHANGE_H
 #define DEFINE_DIFF_CHANGE_H
 
+#include "sm64.h"
+
+#ifdef INPUT_STOMPED
+#define DIFF_3
+#endif
+
 // Diff 3 (Refresh 13-14)
 
 // Include files
@@ -14,7 +20,6 @@
 #include "src/game/rumble_init.h"
 #else
 #include <ultra64.h>
-#include "sm64.h"
 #include "surface_terrains.h"
 #include "moving_texture_macros.h"
 #include "level_misc_macros.h"
