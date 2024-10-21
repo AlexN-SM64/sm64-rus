@@ -78,4 +78,11 @@
 #define TEXT_OPT_CHEAT8    _("Огромный Марио")
 #define TEXT_OPT_CHEAT9    _("Крошечный Марио")
 
+// В новой версии SM64EX (Nightly)
+
+#define TEXT_OPT_L_HIGHLIGHT _(">")
+#define TEXT_OPT_R_HIGHLIGHT _("<")
+#define TEXT_OPT_CAMON     _("Свободная камера")
+#define TEXT_OPT_AUTO      _("Авто")
+
 #endif // TEXT_OPTIONS_STRINGS_H
