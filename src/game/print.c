@@ -1,16 +1,11 @@
-#include <ultra64.h>
+#include <PR/ultratypes.h>
+#include <PR/gbi.h>
 
-#include "sm64.h"
-#include "gfx_dimensions.h"
+#include "config.h"
 #include "game_init.h"
-#include "mario.h"
 #include "memory.h"
-#include "save_file.h"
-#include "main.h"
-#include "engine/surface_collision.h"
-#include "geo_misc.h"
-#include "segment2.h"
 #include "print.h"
+#include "segment2.h"
 
 #include "rus/define_chars.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
@@ -30,7 +25,7 @@ struct TextLabel {
  * Stores the text to be rendered on screen
  * and how they are to be rendered.
  */
-struct TextLabel *sTextLabels[256];
+struct TextLabel *sTextLabels[52];
 s16 sTextLabelsCount = 0;
 
 /**
@@ -74,7 +69,7 @@ void format_integer(s32 n, s32 base, char *dest, s32 *totalLength, u8 width, s8 
         }
 
         // Increments the number of digits until length is long enough.
-        while (1) {
+        while (TRUE) {
             powBase = int_pow(base, numDigits);
 
             if (powBase > (u32) n) {
@@ -258,8 +253,7 @@ void print_text(s32 x, s32 y, const char *str) {
 }
 
 /**
- * Prints text in the colorful lettering centered
- * at given X, Y coordinates.
+ * Prints text in the colorful lettering centered at given X, Y coordinates.
  */
 void print_text_centered(s32 x, s32 y, const char *str) {
     char c = 0;
@@ -370,6 +364,29 @@ void add_glyph_texture(s8 glyphIndex) {
     gSPDisplayList(gDisplayListHead++, dl_hud_img_load_tex_block);
 }
 
+#ifndef WIDESCREEN
+/**
+ * Clips textrect into the boundaries defined.
+ */
+void clip_to_bounds(s32 *x, s32 *y) {
+    if (*x < TEXRECT_MIN_X) {
+        *x = TEXRECT_MIN_X;
+    }
+
+    if (*x > TEXRECT_MAX_X) {
+        *x = TEXRECT_MAX_X;
+    }
+
+    if (*y < TEXRECT_MIN_Y) {
+        *y = TEXRECT_MIN_Y;
+    }
+
+    if (*y > TEXRECT_MAX_Y) {
+        *y = TEXRECT_MAX_Y;
+    }
+}
+#endif
+
 /**
  * Renders the glyph that's set at the given position.
  */
@@ -379,6 +396,10 @@ void render_textrect(s32 x, s32 y, s32 pos) {
     s32 rectX;
     s32 rectY;
 
+#ifndef WIDESCREEN
+    // For widescreen we must allow drawing outside the usual area
+    clip_to_bounds(&rectBaseX, &rectBaseY);
+#endif
     rectX = rectBaseX;
     rectY = rectBaseY;
     gSPTextureRectangle(gDisplayListHead++, rectX << 2, rectY << 2, (rectX + 15) << 2,
