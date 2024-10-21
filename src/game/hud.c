@@ -1,7 +1,7 @@
-#include <PR/ultratypes.h>
+#include <ultra64.h>
+#include <stdbool.h>
 
 #include "sm64.h"
-#include "actors/common1.h"
 #include "gfx_dimensions.h"
 #include "game_init.h"
 #include "level_update.h"
@@ -57,10 +57,11 @@ static struct PowerMeterHUD sPowerMeterHUD = {
 // when the power meter is hidden.
 s32 sPowerMeterVisibleTimer = 0;
 
-UNUSED static struct UnusedHUDStruct sUnusedHUDValues = { 0x00, 0x0A, 0x00 };
+static struct UnusedHUDStruct sUnusedHUDValues = { 0x00, 0x0A, 0x00 };
 
 static struct CameraHUD sCameraHUD = { CAM_STATUS_NONE };
 
+extern bool configHUD;
 /**
  * Renders a rgba16 16x16 glyph texture from a table list.
  */
@@ -456,28 +457,28 @@ void render_hud(void) {
             render_hud_cannon_reticle();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_LIVES) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_LIVES && configHUD) {
             render_hud_mario_lives();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT && configHUD) {
             render_hud_coins();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT && configHUD) {
             render_hud_stars();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_KEYS) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_KEYS && configHUD) {
             render_hud_keys();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_CAMERA_AND_POWER) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_CAMERA_AND_POWER && configHUD) {
             render_hud_power_meter();
             render_hud_camera_status();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_TIMER) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_TIMER && configHUD) {
             render_hud_timer();
         }
     }
