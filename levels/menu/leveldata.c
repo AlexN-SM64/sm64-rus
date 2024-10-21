@@ -1745,10 +1745,7 @@ ALIGNED8 static const u8 texture_menu_course_lower[] = {
 
 // 0x0700D1A8 - 0x0700E1A8
 ALIGNED8 static const u8 texture_menu_course_upper[] = {
-#include "levels/menu/texture_menu_course_upper_rus.rgba16.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
-/*
 #include "levels/menu/main_menu_seg7.0D1A8.rgba16.inc.c"
-*/
 };
 
 // 0x0700E1A8 - 0x0700F1A8
