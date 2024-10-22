@@ -16,13 +16,9 @@ SM64EX - Русская версия. На основе https://github.com/sm64p
 
 Для установки пакетов обратитесь [в SM64EX вики](https://github.com/sm64pc/sm64ex/wiki).
 
-Примечание: Если вы хотите использовать MSYS2 UCRT64 для сборки игры для Windows, в строке терминала уберите пакеты с кроссом `mingw-w64-i686-` и замените кроссы с `mingw-w64-x86_64-` на `mingw-w64-ucrt-x86_64-`. Такой пример выглядит вот так, чтобы установить:
+Примечание: Если вы хотите использовать MSYS2 UCRT64 для сборки игры для Windows, установите дополнительные пакеты с кроссом `mingw-w64-ucrt-x86_64-`:
 ```
-pacman -S unzip make git python3 \
-mingw-w64-ucrt-x86_64-gcc \
-mingw-w64-ucrt-x86_64-glew \
-mingw-w64-ucrt-x86_64-SDL2 \
-mingw-w64-ucrt-x86_64-SDL
+pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-glew mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-SDL
 ```
 
 Важно: Если вы хотите использовать для сборки старой версии SM64EX, понизьте версию GCC до 13.2.
