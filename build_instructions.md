@@ -39,32 +39,20 @@ pacman -S git make python3
 * В MSYS2 UCRT64:
 ```
 pacman -U \
-https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
+https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
+https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
 ```
 * В MSYS2 MinGW 64-бит:
 ```
-# Вариант 1
 pacman -U \
-https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
-
-# Вариант 2
-pacman -U \
-https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
+https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
+https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
 ```
 * В MSYS2 MinGW 32-бит:
 ```
-# Вариант 1
 pacman -U \
-https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
-
-# Вариант 2
-pacman -U \
-https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
-https://repo.msys2.org/mingw/i686/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
+https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
+https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
 ```
 
 Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других пакетов используйте `pacman -Syu --ignore mingw-w64-ucrt-x86_64-gcc --ignore mingw-w64-ucrt-x86_64-gcc-libs --ignore mingw-w64-x86_64-gcc --ignore mingw-w64-x86_64-gcc-libs --ignore mingw-w64-i686-gcc --ignore mingw-w64-i686-gcc-libs`
@@ -101,6 +89,8 @@ https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.t
 Большинство современных дистрибутивов Linux должны иметь пакеты, эквивалентные двум другим, перечисленным выше.
 
 Вы также можете использовать [Docker](#выполнение-сборки-игры-для-linux-с-помощью-docker) для установки образа с минимальными пакетами.
+
+Ещё больше дистрибутивов, в которых необходимо установить пакеты, обращайтесь [в SM64EX вики](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Linux).
 
 ### Шаг 2 - Клонирование репозиторий
 
