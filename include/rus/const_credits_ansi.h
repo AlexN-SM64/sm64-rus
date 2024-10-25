@@ -32,25 +32,47 @@
 #define NAME_L_SWAN      "кеякх ябюм"
 #define NAME_H_YAMAUCHI  "ухпнях ълюсрх"
 
-const char *credits01[] = { "1дхпейрнп хцпш", NAME_S_MIYAMOTO };
-const char *credits02[] = { "2дхпейрнпш юяяхяремрю", NAME_Y_KOIZUMI, NAME_T_TEZUKA };
-const char *credits03[] = { "2яхярелмше опнцпюллхярш", NAME_Y_NISHIDA, NAME_Y_TANIMOTO };
-const char *credits04[] = { "3опнцпюллхярш", NAME_H_YAJIMA, NAME_D_IWAMOTO, NAME_T_IWAWAKI };
-const char *credits05[] = { "1опнцпюллхяр йюлепш", NAME_T_KAWAGOE };
-const char *credits06[] = { "1опнцпюллхяр кхжю люпхн", NAME_G_GODDARD };
-const char *credits07[] = { "2дхпейрнпш йспяю", NAME_Y_YAMADA, NAME_Y_YAMAMURA };
-const char *credits08[] = { "2дхгюимепш йспяю", NAME_K_USUI, NAME_N_MORI };
-const char *credits09[] = { "3дхгюимепш йспяю", NAME_Y_HARUHANA, NAME_M_MIYANAGA, NAME_K_KANNO };
-const char *credits10[] = { "1йнлонгхрнп", NAME_K_KONDO };
-const char *credits11[] = { "4гбсйнбше щттейрш", "опнцпюллхяр гбсйю", NAME_Y_INAGAKI, NAME_H_SHIMIZU };
-const char *credits12[] = { "23 D юмхлюрнпш", NAME_Y_KOIZUMI, NAME_S_TAKIZAWA };
-const char *credits13[] = { "1днонкмхрекэмюъ цпютхйю", NAME_M_ARIMOTO };
-const char *credits14[] = { "3реуонддепфйю", NAME_T_SAWANO, NAME_H_YOSHIMOTO, NAME_H_YADA };
-const char *credits15[] = { "1реуонддепфйю", "SGI N64 PROJECT STAFF" };
-const char *credits16[] = { "2лемедфелемр опнцпеяяю", NAME_K_FUKUI, NAME_K_KATO };
-const char *credits17[] = { "4цнкня люпхн", "цнкня охв", NAME_C_MARTINET, NAME_L_SWAN };
-const char *credits18[] = { "3нянаюъ акюцндюпмнярэ", "EAD STAFF", "ALL NINTENDO PERSONNEL", "MARIO CLUB STAFF" };
-const char *credits19[] = { "4опндчяеп", "хяонкмхрекэмши опндчяеп", NAME_S_MIYAMOTO, NAME_H_YAMAUCHI };
-const char *credits20[] = { "1псяхтхйюрнп х оепебнд", "ALEXN" };
+#define TITLE_GAME_DIRECTOR         "дхпейрнп хцпш"
+#define TITLE_ASSISTANT_DIRECTORS   "дхпейрнпш юяяхяремрю"
+#define TITLE_SYSTEM_PROGRAMMERS    "яхярелмше опнцпюллхярш"
+#define TITLE_PROGRAMMERS           "опнцпюллхярш"
+#define TITLE_CAMERA_PROGRAMMER     "опнцпюллхяр йюлепш"
+#define TITLE_MARIO_FACE_PROGRAMMER "опнцпюллхяр кхжю люпхн"
+#define TITLE_COURSE_DIRECTORS      "дхпейрнпш йспяю"
+#define TITLE_COURSE_DESIGNERS      "дхгюимепш йспяю"
+#define TITLE_SOUND_COMPOSER        "йнлонгхрнп"
+#define TITLE_SOUND_EFFECTS         "гбсйнбше щттейрш"
+#define TITLE_SOUND_PROGRAMMER      "опнцпюллхяр гбсйю"
+#define TITLE_3D_ANIMATORS          "3 D юмхлюрнпш"
+#define TITLE_ADDITIONAL_GRAPHICS   "днонкмхрекэмюъ цпютхйю"
+#define TITLE_TECHNICAL_SUPPORT     "реуонддепфйю"
+#define TITLE_PROGRESS_MANAGEMENT   "лемедфелемр опнцпеяяю"
+#define TITLE_MARIO_VOICE           "цнкня люпхн"
+#define TITLE_PEACH_VOICE           "цнкня охв"
+#define TITLE_SPECIAL_THANKS_TO     "нянаюъ акюцндюпмнярэ"
+#define TITLE_PRODUCER              "опндчяеп"
+#define TITLE_EXECUTIVE_PRODUCER    "хяонкмхрекэмши опндчяеп"
+
+const char *credits01[] = { "1" TITLE_GAME_DIRECTOR, NAME_S_MIYAMOTO };
+const char *credits02[] = { "2" TITLE_ASSISTANT_DIRECTORS, NAME_Y_KOIZUMI, NAME_T_TEZUKA };
+const char *credits03[] = { "2" TITLE_SYSTEM_PROGRAMMERS, NAME_Y_NISHIDA, NAME_Y_TANIMOTO };
+const char *credits04[] = { "3" TITLE_PROGRAMMERS, NAME_H_YAJIMA, NAME_D_IWAMOTO, NAME_T_IWAWAKI };
+const char *credits05[] = { "1" TITLE_CAMERA_PROGRAMMER, NAME_T_KAWAGOE };
+const char *credits06[] = { "1" TITLE_MARIO_FACE_PROGRAMMER, NAME_G_GODDARD };
+const char *credits07[] = { "2" TITLE_COURSE_DIRECTORS, NAME_Y_YAMADA, NAME_Y_YAMAMURA };
+const char *credits08[] = { "2" TITLE_COURSE_DESIGNERS, NAME_K_USUI, NAME_N_MORI };
+const char *credits09[] = { "3" TITLE_COURSE_DESIGNERS, NAME_Y_HARUHANA, NAME_M_MIYANAGA, NAME_K_KANNO };
+const char *credits10[] = { "1" TITLE_SOUND_COMPOSER, NAME_K_KONDO };
+const char *credits11[] = { "4" TITLE_SOUND_EFFECTS, TITLE_SOUND_PROGRAMMER, NAME_Y_INAGAKI, NAME_H_SHIMIZU };
+const char *credits12[] = { "2" TITLE_3D_ANIMATORS, NAME_Y_KOIZUMI, NAME_S_TAKIZAWA };
+const char *credits13[] = { "1" TITLE_ADDITIONAL_GRAPHICS, NAME_M_ARIMOTO };
+const char *credits14[] = { "3" TITLE_TECHNICAL_SUPPORT, NAME_T_SAWANO, NAME_H_YOSHIMOTO, NAME_H_YADA };
+const char *credits15[] = { "1" TITLE_TECHNICAL_SUPPORT, "SGI N64 PROJECT STAFF" };
+const char *credits16[] = { "2" TITLE_PROGRESS_MANAGEMENT, NAME_K_FUKUI, NAME_K_KATO };
+const char *credits17[] = { "4" TITLE_MARIO_VOICE, TITLE_PEACH_VOICE, NAME_C_MARTINET, NAME_L_SWAN };
+const char *credits18[] = { "3" TITLE_SPECIAL_THANKS_TO, "EAD STAFF", "ALL NINTENDO PERSONNEL", "MARIO CLUB STAFF" };
+const char *credits19[] = { "4" TITLE_PRODUCER, TITLE_EXECUTIVE_PRODUCER, NAME_S_MIYAMOTO, NAME_H_YAMAUCHI };
+
+const char *credits20[] = { "1" "псяхтхйюрнп х оепебнд", "ALEXN" };
 
 #endif // This will be used in "src/game/level_update.c"
