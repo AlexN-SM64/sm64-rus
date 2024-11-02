@@ -1,6 +1,6 @@
-#include <PR/ultratypes.h>
-
 #include "define_diff_change.h"
+
+#include <PR/ultratypes.h>
 
 #include "audio/external.h"
 #include "behavior_data.h"
@@ -17,6 +17,9 @@
 #include "game/save_file.h"
 #include "game/segment2.h"
 #include "game/segment7.h"
+#ifdef DIFF_3
+#include "game/rumble_init.h"
+#endif
 #include "sm64.h"
 #include "star_select.h"
 #include "text_strings.h"
@@ -424,9 +427,9 @@ s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused
         if ((gPlayer3Controller->buttonPressed & (A_BUTTON | START_BUTTON | B_BUTTON | Z_TRIG))) {
 #endif
 #if defined(VERSION_JP)
-            play_sound(SOUND_MENU_STAR_SOUND, DIFF_GLOBAL_SOUND_SOURCE);
+            play_sound(SOUND_MENU_STAR_SOUND, DIFF3_G_GLOBAL_SOUND_SOURCE);
 #else
-            play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, DIFF_GLOBAL_SOUND_SOURCE);
+            play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, DIFF3_G_GLOBAL_SOUND_SOURCE);
 #endif
 #if ENABLE_RUMBLE
             queue_rumble_data(60, 70);
