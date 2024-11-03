@@ -1,8 +1,5 @@
-#ifndef RUS_INGAME_MENU_RENDER_DIALOG_SPECIAL_H
-#define RUS_INGAME_MENU_RENDER_DIALOG_SPECIAL_H
-
 void change_dialog_position_y(s16 dialogID,
-#include "rus/render_dialog_char_options_initialize.h"
+#include "rus/render_dialog_char_options_initialize.inc.c"
 ) {
 	s16 dialogIDs[] = { DIALOG_008, DIALOG_161 };
 	f32 yPositions[] = { -3, -1 };
@@ -10,13 +7,13 @@ void change_dialog_position_y(s16 dialogID,
 	while (dialogIDs[i] != dialogID) {
 		i += 1;
 	}
-#include "rus/render_dialog_char_options_start.h"
+#include "rus/render_dialog_char_options_start.inc.c"
 		create_dl_translation_matrix(MENU_MTX_NOPUSH, 0, yPositions[i], 0);
-#include "rus/render_dialog_char_options_end.h"
+#include "rus/render_dialog_char_options_end.inc.c"
 }
 
 void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP,
-#include "rus/render_dialog_char_options_initialize.h"
+#include "rus/render_dialog_char_options_initialize.inc.c"
 ) {
 
     s8 tensDigit = gDialogVariable / 10;
@@ -33,7 +30,7 @@ void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP
 		}
 	}
 
-#include "rus/render_dialog_char_options_start.h"
+#include "rus/render_dialog_char_options_start.inc.c"
 	
 	if (curLetter == DIALOG_CHAR_CYRILLIC_SMALL_IO) {
 		render_generic_char(ASCII_TO_DIALOG('e'));
@@ -46,7 +43,5 @@ void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP
 		linePos += gDialogCharWidths[curLetter];
 	}
 	
-#include "rus/render_dialog_char_options_end.h"
+#include "rus/render_dialog_char_options_end.inc.c"
 }
-
-#endif // This will be used in "src/game/ingame_menu.c"

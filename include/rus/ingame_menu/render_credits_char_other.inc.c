@@ -1,6 +1,3 @@
-#ifndef RUS_INGAME_MENU_RENDER_CREDITS_CHAR_OTHER_H
-#define RUS_INGAME_MENU_RENDER_CREDITS_CHAR_OTHER_H
-
 if (str[strPos] == CREDITS_CHAR_CYRILLIC_IO) {
     gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, fontLUT[ASCII_TO_DIALOG('E')]);
 } else if (str[strPos] == CREDITS_CHAR_CYRILLIC_I_SHORT) {
@@ -42,5 +39,3 @@ if (str[strPos] == CREDITS_CHAR_CYRILLIC_DE || str[strPos] == CREDITS_CHAR_CYRIL
     gSPTextureRectangle(gDisplayListHead++, curX << 2, (curY + 8) << 2, (curX + 8) << 2,
                         (curY + 16) << 2, G_TX_RENDERTILE, 0, 0, 1 << 10, 1 << 10);
 }
-
-#endif

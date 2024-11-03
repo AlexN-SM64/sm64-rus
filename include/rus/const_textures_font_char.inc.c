@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_TEXTURES_FONT_CHAR_H
-#define RUS_CONST_TEXTURES_FONT_CHAR_H
-
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_font_char_cyrillic_capital_be[] = {
 #include "textures/segment2/texture_font_char_cyrillic_capital_be.ia4.inc.c"
 };
@@ -176,5 +173,3 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_font_char_capital_breve[] = {
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_font_char_small_breve[] = {
 #include "textures/segment2/texture_font_char_small_breve.ia4.inc.c"
 };
-
-#endif // This will be used in "bin/segment2.c"

@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_TEXRUES_HUD_CHAR_H
-#define RUS_CONST_TEXRUES_HUD_CHAR_H
-
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_hud_char_cyrillic_be[] = {
 #include "textures/segment2/texture_hud_char_cyrillic_be.rgba16.inc.c"
 };
@@ -88,5 +85,3 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_hud_char_diaeresis[] = {
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_hud_char_breve[] = {
 #include "textures/segment2/texture_hud_char_breve.rgba16.inc.c"
 };
-
-#endif // This will be used in "bin/segment2.c"

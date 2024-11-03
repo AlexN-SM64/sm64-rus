@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_MENU_FONT_LUT_H
-#define RUS_CONST_MENU_FONT_LUT_H
-
 #define MENU_FONT_MARKS_RUS \
 texture_menu_font_char_diaeresis,     \
 texture_menu_font_char_breve,         \
@@ -18,5 +15,3 @@ texture_menu_font_char_cyrillic_sha,       texture_menu_font_char_cyrillic_shcha
 texture_menu_font_char_cyrillic_hard_sign, texture_menu_font_char_cyrillic_yeru,  \
 texture_menu_font_char_cyrillic_soft_sign, texture_menu_font_char_cyrillic_e,     \
 texture_menu_font_char_cyrillic_yu,        texture_menu_font_char_cyrillic_ya,
-
-#endif // This will be used in "levels/menu/leveldata.c"

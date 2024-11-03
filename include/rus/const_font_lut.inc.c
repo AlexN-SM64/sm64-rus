@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_FONT_LUT_H
-#define RUS_CONST_FONT_LUT_H
-
 #define FONT_MARKS_RUS \
 texture_font_char_diaeresis,     \
 texture_font_char_capital_breve, \
@@ -28,5 +25,3 @@ texture_font_char_cyrillic_small_shcha,       texture_font_char_cyrillic_small_h
 texture_font_char_cyrillic_small_yeru,        texture_font_char_cyrillic_small_soft_sign, \
 texture_font_char_cyrillic_small_e,           texture_font_char_cyrillic_small_yu,        \
 texture_font_char_cyrillic_small_ya,
-
-#endif // This will be used in "bin/segment2.c"

@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_TEXRUES_CREDITS_CHAR_H
-#define RUS_CONST_TEXRUES_CREDITS_CHAR_H
-
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_credits_char_cyrillic_be[] = {
 #include "textures/segment2/texture_credits_char_cyrillic_be.rgba16.inc.c"
 };
@@ -96,5 +93,3 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_credits_char_undersym_left[] = 
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_credits_char_undersym_right[] = {
 #include "textures/segment2/texture_credits_char_undersym_right.rgba16.inc.c"
 };
-
-#endif // This will be used in "bin/segment2.c"

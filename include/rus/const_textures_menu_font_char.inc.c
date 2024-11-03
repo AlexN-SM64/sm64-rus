@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_TEXTURES_MENU_FONT_CHAR_H
-#define RUS_CONST_TEXTURES_MENU_FONT_CHAR_H
-
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_menu_font_char_cyrillic_be[] = {
 #include "levels/menu/texture_menu_font_char_cyrillic_be.ia8.inc.c"
 };
@@ -96,5 +93,3 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_menu_font_char_undersym_left[] 
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_menu_font_char_undersym_right[] = {
 #include "levels/menu/texture_menu_font_char_undersym_right.ia8.inc.c"
 };
-
-#endif // This will be used in "levels/menu/leveldata.c"

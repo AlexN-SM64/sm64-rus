@@ -230,7 +230,7 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_hud_char_beta_key[] = {
 };
 #endif
 
-#include "rus/const_textures_hud_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_textures_hud_char.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_credits_char_3[] = {
 #include "textures/segment2/segment2.06200.rgba16.inc.c"
@@ -352,7 +352,7 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_credits_char_period[] = {
 #include "textures/segment2/segment2.07080.rgba16.inc.c"
 };
 
-#include "rus/const_textures_credits_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_textures_credits_char.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 // JP Small Font
 #if defined(VERSION_JP) || defined(VERSION_SH)
@@ -1790,7 +1790,7 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_font_char_us_button_C_right[] =
 };
 #endif
 
-#include "rus/const_textures_font_char.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_textures_font_char.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 ALIGNED8 static const DIFF3_TYPE_TEXTURE texture_hud_char_camera[] = {
 #include "textures/segment2/segment2.07B50.rgba16.inc.c"
@@ -1846,7 +1846,7 @@ const DIFF3_TYPE_TEXTURE *const main_hud_lut[] = {
                   0x0,               0x0, texture_hud_char_multiply, texture_hud_char_coin,
     texture_hud_char_mario_head, texture_hud_char_star,               0x0,               0x0,
     texture_hud_char_apostrophe, texture_hud_char_double_quote,
-#include "rus/const_hud_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_hud_lut.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 #else
     texture_hud_char_0, texture_hud_char_1, texture_hud_char_2, texture_hud_char_3,
     texture_hud_char_4, texture_hud_char_5, texture_hud_char_6, texture_hud_char_7,
@@ -1936,7 +1936,7 @@ const DIFF3_TYPE_TEXTURE *const main_font_lut[] = {
     texture_font_char_eu_star_hollow,
     0x0, 0x0,
 #elif defined(VERSION_US) // US Font Table
-#include "rus/const_font_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_font_lut.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
     texture_font_char_us_0, texture_font_char_us_1, texture_font_char_us_2, texture_font_char_us_3,
     texture_font_char_us_4, texture_font_char_us_5, texture_font_char_us_6, texture_font_char_us_7,
     texture_font_char_us_8, texture_font_char_us_9, texture_font_char_us_A, texture_font_char_us_B,
@@ -2071,7 +2071,7 @@ const DIFF3_TYPE_TEXTURE *const main_credits_font_lut[] = {
     texture_credits_char_S, texture_credits_char_T, texture_credits_char_U, texture_credits_char_V,
     texture_credits_char_W, texture_credits_char_X, texture_credits_char_Y, texture_credits_char_Z,
     texture_credits_char_period,
-#include "rus/const_credits_lut.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_credits_lut.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 };
 
 // HUD camera table 0x020087CC-0x020087E3
