@@ -437,7 +437,7 @@ static void optmenu_opt_change(struct Option *opt, s32 val) {
     }
 }
 
-#include "rus/sm64ex/options_menu/get_hudstr_centered_x.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/sm64ex/options_menu/get_hudstr_centered_x.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 /*
 static inline s16 get_hudstr_centered_x(const s16 sx, const u8 *str) {
     const u8 *chr = str;
