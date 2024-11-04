@@ -1,6 +1,3 @@
-#ifndef RUS_INGAME_MENU_ANSI_TO_CREDITS_CHAR_H
-#define RUS_INGAME_MENU_ANSI_TO_CREDITS_CHAR_H
-
 #include "rus/windows_1251_charmap.h"
 
 if (c == ANSI_CHAR_CYRILLIC_CAPITAL_A || c == ANSI_CHAR_CYRILLIC_SMALL_A) {
@@ -102,5 +99,3 @@ if (c == ANSI_CHAR_CYRILLIC_CAPITAL_YU || c == ANSI_CHAR_CYRILLIC_SMALL_YU) {
 if (c == ANSI_CHAR_CYRILLIC_CAPITAL_YA || c == ANSI_CHAR_CYRILLIC_SMALL_YA) {
     return CREDITS_CHAR_CYRILLIC_YA;
 }
-
-#endif // This will be used in "src/game/ingame_menu.c"

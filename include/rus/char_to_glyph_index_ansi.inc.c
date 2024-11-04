@@ -1,6 +1,3 @@
-#ifndef RUS_CHAR_TO_GLYPH_INDEX_ANSI_H
-#define RUS_CHAR_TO_GLYPH_INDEX_ANSI_H
-
 if (c == 'À' || c == 'à') {
     return GLYPH_A;
 }
@@ -132,5 +129,3 @@ if (c == 'Þ' || c == 'þ') {
 if (c == 'ß' || c == 'ÿ') {
     return GLYPH_CYRILLIC_YA;
 }
-
-#endif // This will be used in "src/game/print.c"

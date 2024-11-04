@@ -54,7 +54,7 @@
 
 #define WARP_NODE_CREDITS_MIN 0xF8
 
-#include "rus/const_credits_ansi.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/const_credits_ansi.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 /*
 #ifdef VERSION_JP
 const char *credits01[] = { "1GAME DIRECTOR", "SHIGERU MIYAMOTO" };

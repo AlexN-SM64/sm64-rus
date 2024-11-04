@@ -1,6 +1,3 @@
-#ifndef RUS_CONST_CREDITS_ANSI_H
-#define RUS_CONST_CREDITS_ANSI_H
-
 #define NAME_S_MIYAMOTO  "—»√›–” Ã»ﬂÃŒ“Œ"
 #define NAME_Y_KOIZUMI   "®—»¿ »  Œ»ƒ«”Ã»"
 #define NAME_T_TEZUKA    "“¿ ¿—» “›ƒ«” ¿"
@@ -74,5 +71,3 @@ const char *credits18[] = { "3" TITLE_SPECIAL_THANKS_TO, "EAD STAFF", "ALL NINTE
 const char *credits19[] = { "4" TITLE_PRODUCER, TITLE_EXECUTIVE_PRODUCER, NAME_S_MIYAMOTO, NAME_H_YAMAUCHI };
 
 const char *credits20[] = { "1" "–”—»‘» ¿“Œ– » œ≈–≈¬Œƒ", "ALEXN" };
-
-#endif // This will be used in "src/game/level_update.c"

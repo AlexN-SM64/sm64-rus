@@ -354,7 +354,7 @@ s8 char_to_glyph_index(char c) {
         return GLYPH_BETA_KEY; // beta key, JP only. Reused for Ü in EU.
     }
 
-#include "rus/char_to_glyph_index_ansi.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/char_to_glyph_index_ansi.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
     return GLYPH_SPACE;
 }
@@ -430,7 +430,7 @@ void render_text_labels(void) {
                     render_textrect(sTextLabels[i]->x, sTextLabels[i]->y, j);
                 }
 #else
-#include "rus/render_glyph_special_letters.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/render_glyph_special_letters.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 #endif
             }
         }
