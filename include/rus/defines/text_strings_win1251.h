@@ -1,3 +1,11 @@
+#ifndef RUS_DEFINES_TEXT_STRINGS_WIN1251_H
+#define RUS_DEFINES_TEXT_STRINGS_WIN1251_H
+
+#define TXT_HUD_NO_CONTROLLER "Õ≈“  ŒÕ“–ŒÀÀ≈–¿"
+#define TXT_HUD_PRESS         "Õ¿∆Ã»"
+#define TXT_HUD_START         "START"
+#define TXT_HUD_TIME          "¬–≈Ãﬂ"
+
 #define NAME_S_MIYAMOTO  "—»√›–” Ã»ﬂÃŒ“Œ"
 #define NAME_Y_KOIZUMI   "®—»¿ »  Œ»ƒ«”Ã»"
 #define NAME_T_TEZUKA    "“¿ ¿—» “›ƒ«” ¿"
@@ -50,24 +58,12 @@
 #define TITLE_PRODUCER              "œ–Œƒﬁ—≈–"
 #define TITLE_EXECUTIVE_PRODUCER    "»—œŒÀÕ»“≈À‹Õ€… œ–Œƒﬁ—≈–"
 
-const char *credits01[] = { "1" TITLE_GAME_DIRECTOR, NAME_S_MIYAMOTO };
-const char *credits02[] = { "2" TITLE_ASSISTANT_DIRECTORS, NAME_Y_KOIZUMI, NAME_T_TEZUKA };
-const char *credits03[] = { "2" TITLE_SYSTEM_PROGRAMMERS, NAME_Y_NISHIDA, NAME_Y_TANIMOTO };
-const char *credits04[] = { "3" TITLE_PROGRAMMERS, NAME_H_YAJIMA, NAME_D_IWAMOTO, NAME_T_IWAWAKI };
-const char *credits05[] = { "1" TITLE_CAMERA_PROGRAMMER, NAME_T_KAWAGOE };
-const char *credits06[] = { "1" TITLE_MARIO_FACE_PROGRAMMER, NAME_G_GODDARD };
-const char *credits07[] = { "2" TITLE_COURSE_DIRECTORS, NAME_Y_YAMADA, NAME_Y_YAMAMURA };
-const char *credits08[] = { "2" TITLE_COURSE_DESIGNERS, NAME_K_USUI, NAME_N_MORI };
-const char *credits09[] = { "3" TITLE_COURSE_DESIGNERS, NAME_Y_HARUHANA, NAME_M_MIYANAGA, NAME_K_KANNO };
-const char *credits10[] = { "1" TITLE_SOUND_COMPOSER, NAME_K_KONDO };
-const char *credits11[] = { "4" TITLE_SOUND_EFFECTS, TITLE_SOUND_PROGRAMMER, NAME_Y_INAGAKI, NAME_H_SHIMIZU };
-const char *credits12[] = { "2" TITLE_3D_ANIMATORS, NAME_Y_KOIZUMI, NAME_S_TAKIZAWA };
-const char *credits13[] = { "1" TITLE_ADDITIONAL_GRAPHICS, NAME_M_ARIMOTO };
-const char *credits14[] = { "3" TITLE_TECHNICAL_SUPPORT, NAME_T_SAWANO, NAME_H_YOSHIMOTO, NAME_H_YADA };
-const char *credits15[] = { "1" TITLE_TECHNICAL_SUPPORT, "SGI N64 PROJECT STAFF" };
-const char *credits16[] = { "2" TITLE_PROGRESS_MANAGEMENT, NAME_K_FUKUI, NAME_K_KATO };
-const char *credits17[] = { "4" TITLE_MARIO_VOICE, TITLE_PEACH_VOICE, NAME_C_MARTINET, NAME_L_SWAN };
-const char *credits18[] = { "3" TITLE_SPECIAL_THANKS_TO, "EAD STAFF", "ALL NINTENDO PERSONNEL", "MARIO CLUB STAFF" };
-const char *credits19[] = { "4" TITLE_PRODUCER, TITLE_EXECUTIVE_PRODUCER, NAME_S_MIYAMOTO, NAME_H_YAMAUCHI };
+#define NAME_SGI_N64_PROJECT_STAFF  "SGI N64 PROJECT STAFF"
+#define NAME_EAD_STAFF              "EAD STAFF"
+#define NAME_ALL_NINTENDO_PERSONNEL "ALL NINTENDO PERSONNEL"
+#define NAME_MARIO_CLUB_STAFF       "MARIO CLUB STAFF"
 
-const char *credits20[] = { "1" "–”—»‘» ¿“Œ– » œ≈–≈¬Œƒ", "ALEXN" };
+#define YOURTEXT_1                  "–”—»‘» ¿“Œ– » œ≈–≈¬Œƒ"
+#define YOURTEXT_2                  "ALEXN"
+
+#endif

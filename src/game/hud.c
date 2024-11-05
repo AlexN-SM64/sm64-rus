@@ -15,8 +15,8 @@
 #include "print.h"
 
 //! INCLUDED ONLY IN RUSSIAN VERSION
-#include "rus/define_hud_text_ansi.h"
-#include "rus/define_hud_text_x.h"
+#include "rus/defines/text_strings_win1251.h"
+#include "rus/defines/hud_text_x.h"
 
 /* @file hud.c
  * This file implements HUD rendering and power meter animations.
@@ -356,8 +356,7 @@ void render_hud_timer(void) {
 
     timerFracSecs = ((timerValFrames - (timerMins * 1800) - (timerSecs * 30)) & 0xFFFF) / 3;
 #ifndef VERSION_EU
-#include "rus/define_hud_text_time_x.h" //! INCLUDED ONLY IN RUSSIAN VERSION
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(TXT_TIME_X_OUTPUT), 185, TXT_TIME); //! ONLY IN RUSSIAN VERSION
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(TXT_TIME_X_OUTPUT), 185, TXT_HUD_TIME); //! ONLY IN RUSSIAN VERSION
 #endif
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(91), 185, "%0d", timerMins);
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(71), 185, "%02d", timerSecs);

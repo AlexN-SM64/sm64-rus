@@ -27,8 +27,8 @@
 #endif
 
 //! INCLUDED ONLY IN RUSSIAN VERSION
-#include "rus/define_file_select.h"
-#include "rus/define_chars.h"
+#include "rus/defines/file_select.h"
+#include "rus/defines/chars.h"
 
 /**
  * @file file_select.c
@@ -2165,6 +2165,8 @@ void erase_menu_display_message(s8 messageID) {
     unsigned char textSavedDataExists[] = { TEXT_SAVED_DATA_EXISTS };
 #endif
 
+CONST_CHAR_ABCD //! ONLY IN RUSSIAN VERSION
+
     switch (messageID) {
         case ERASE_MSG_MAIN_TEXT:
 #ifdef VERSION_EU
@@ -2183,7 +2185,7 @@ void erase_menu_display_message(s8 messageID) {
             print_generic_string_fade(NOSAVE_DATA_X3, 190, LANGUAGE_ARRAY(textNoSavedDataExists));
             break;
         case ERASE_MSG_MARIO_ERASED:
-#include "rus/file_select_erase_fileletter.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+			FILELETTER_ERASE //! ONLY IN RUSSIAN VERSION
 #ifdef VERSION_EU
             centeredX = get_str_x_pos_from_center(160, textMarioAJustErased[sLanguageMode], 10.0f);
 #endif
@@ -2536,7 +2538,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
     }
 #endif
 
-#include "rus/file_select_score_fileletter.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+	FILELETTER_SCORE //! ONLY IN RUSSIAN VERSION
 
     // Print file name at top
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);

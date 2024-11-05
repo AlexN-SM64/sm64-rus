@@ -1,4 +1,4 @@
-#include "rus/windows_1251_charmap.h"
+#include "rus/defines/win1251_charmap.h"
 
 if (c == ANSI_CHAR_CYRILLIC_CAPITAL_A || c == ANSI_CHAR_CYRILLIC_SMALL_A) {
     return ASCII_TO_DIALOG('A');

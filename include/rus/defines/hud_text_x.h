@@ -1,8 +1,10 @@
-#ifndef RUS_DEFINE_HUD_TEXT_TIME_X_H
-#define RUS_DEFINE_HUD_TEXT_TIME_X_H
+#ifndef RUS_DEFINES_HUD_TEXT_X_H
+#define RUS_DEFINES_HUD_TEXT_X_H
 
 #include "config.h"
 
+#define TXT_TIME_X     155
+#define TXT_TIME_X_OFFSET 7
 #define TXT_TIME_X_OUTPUT \
 ( \
 	(GFX_DIMENSIONS_FULL_RADIUS <= (SCREEN_WIDTH + TXT_TIME_X_OFFSET)) ? \
@@ -12,5 +14,8 @@
 	: \
 		(TXT_TIME_X + ((GFX_DIMENSIONS_FULL_RADIUS - SCREEN_WIDTH - TXT_TIME_X_OFFSET) / 2)) \
 )
+
+#define TXT_HISCORE_X  119
+#define TXT_CONGRATS_X 94
 
 #endif
