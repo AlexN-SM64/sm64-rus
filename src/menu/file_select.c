@@ -2149,6 +2149,8 @@ void print_erase_menu_prompt(s16 x, s16 y) {
 //! ONLY IN RUSSIAN VERSION, DEFINED IN "define_file_select.h"
     #define MARIO_ERASED_VAR 6
 
+CONST_CHAR_ABCD //! ONLY IN RUSSIAN VERSION
+
 /**
  * Defines IDs for the top message of the erase menu and displays it if the ID is called in messageID.
  */
@@ -2164,8 +2166,6 @@ void erase_menu_display_message(s8 messageID) {
     unsigned char textMarioAJustErased[] = { TEXT_FILE_MARIO_A_JUST_ERASED };
     unsigned char textSavedDataExists[] = { TEXT_SAVED_DATA_EXISTS };
 #endif
-
-CONST_CHAR_ABCD //! ONLY IN RUSSIAN VERSION
 
     switch (messageID) {
         case ERASE_MSG_MAIN_TEXT:
