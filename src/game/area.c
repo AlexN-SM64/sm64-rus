@@ -26,7 +26,7 @@
 #include "level_table.h"
 #include "dialog_ids.h"
 
-#include "rus/define_hud_text_ansi.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/defines/text_strings_win1251.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 struct SpawnInfo gPlayerSpawnInfos[1];
 struct GraphNode *D_8033A160[0x100];
@@ -119,14 +119,14 @@ void print_intro_text(void) {
 #ifdef VERSION_EU
             print_text_centered(SCREEN_WIDTH / 2, 20, gNoControllerMsg[language]);
 #else
-            print_text_centered(SCREEN_WIDTH / 2, 20, TXT_NO_CONTROLLER); //! ONLY IN RUSSIAN VERSION
+            print_text_centered(SCREEN_WIDTH / 2, 20, TXT_HUD_NO_CONTROLLER); //! ONLY IN RUSSIAN VERSION
 #endif
         } else {
 #ifdef VERSION_EU
             print_text(20, 20, "START");
 #else
-            print_text_centered(60, 38, TXT_PRESS); //! ONLY IN RUSSIAN VERSION
-            print_text_centered(60, 20, "START");
+            print_text_centered(60, 38, TXT_HUD_PRESS); //! ONLY IN RUSSIAN VERSION
+            print_text_centered(60, 20, TXT_HUD_START);
 #endif
         }
     }

@@ -3327,7 +3327,7 @@ static const Vtx intro_seg7_vertex_0700B420[] = {
     {{{    96,     58,     -1}, 0, {     0,      0}, {0xff, 0xff, 0xff, 0xff}}},
 };
 
-#include "rus/const_intro_seg7_vertex_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/consts/vertexes/intro_seg7_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 // 0x0700B460 - 0x0700B4A0
 static const Vtx intro_seg7_vertex_0700B460[] = {
@@ -3350,7 +3350,7 @@ ALIGNED8 static const DIFF3_TYPE_TEXTURE intro_seg7_texture_0700B4A0[] = {
 };
 #endif
 
-#include "rus/const_intro_seg7_texture_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/consts/textures/intro_seg7_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 #if defined(VERSION_EU)
 // 0x0700C4A0 - 0x0700D4A0
@@ -3378,7 +3378,7 @@ const Gfx intro_seg7_dl_0700C6A0[] = {
     gsSPVertex(intro_seg7_vertex_0700B420, 4, 0),
     gsSP2Triangles( 0,  1,  2, 0x0,  0,  2,  3, 0x0),
 
-#include "rus/const_intro_seg7_dl_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/consts/dl/intro_seg7_copyright.inc.c" //! INCLUDED ONLY IN RUSSIAN VERSION
 
     gsDPLoadTextureBlock(intro_seg7_texture_0700C4A0, G_IM_FMT_RGBA, G_IM_SIZ_16b, 16, 16, 0, G_TX_CLAMP, G_TX_CLAMP, 4, 4, G_TX_NOLOD, G_TX_NOLOD),
     gsSPVertex(intro_seg7_vertex_0700B460, 4, 0),

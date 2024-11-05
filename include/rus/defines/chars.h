@@ -1,5 +1,5 @@
-#ifndef RUS_DEFINE_CHARS_H
-#define RUS_DEFINE_CHARS_H
+#ifndef RUS_DEFINES_CHARS_H
+#define RUS_DEFINES_CHARS_H
 
 // Colorful glyphs
 #define GLYPH_A 10

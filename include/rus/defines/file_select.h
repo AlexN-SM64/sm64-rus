@@ -1,5 +1,5 @@
-#ifndef RUS_DEFINE_FILE_SELECT_H
-#define RUS_DEFINE_FILE_SELECT_H
+#ifndef RUS_DEFINES_FILE_SELECT_H
+#define RUS_DEFINES_FILE_SELECT_H
 
 #define TEXT_SOUND_MODES_LENGTH 9
 
@@ -135,6 +135,8 @@
 #define COPYFILE_X2 224
 // 126 + (233 - 135) = 224
 
-static unsigned char charABCD[] = { CHAR_ABCD };
+#define CONST_CHAR_ABCD static unsigned char charABCD[] = { CHAR_ABCD };
+#define FILELETTER_SCORE textFileLetter[0] = charABCD[fileIndex];
+#define FILELETTER_ERASE LANGUAGE_ARRAY(textMarioAJustErased)[MARIO_ERASED_VAR] = charABCD[sSelectedFileIndex];
 
 #endif

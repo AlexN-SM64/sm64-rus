@@ -25,7 +25,7 @@
 #include "text_strings.h"
 #include "prevent_bss_reordering.h"
 
-#include "rus/define_star_select.h" //! INCLUDED ONLY IN RUSSIAN VERSION
+#include "rus/defines/star_select.h" //! INCLUDED ONLY IN RUSSIAN VERSION
 
 /**
  * @file star_select.c
