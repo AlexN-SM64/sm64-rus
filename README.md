@@ -18,7 +18,11 @@ Super Mario 64 EX (SM64EX) - Русская версия. На основе http
 
 Примечание: Если вы хотите использовать MSYS2 UCRT64 для сборки игры для Windows, установите дополнительные компоненты с кроссом `mingw-w64-ucrt-x86_64-`:
 ```sh
-pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-glew mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-SDL
+pacman -S \
+mingw-w64-ucrt-x86_64-gcc \
+mingw-w64-ucrt-x86_64-glew \
+mingw-w64-ucrt-x86_64-SDL2 \
+mingw-w64-ucrt-x86_64-SDL
 ```
 
 Важно: Если вы хотите использовать для сборки старой версии SM64EX, понизьте версию GCC до 13.2.
