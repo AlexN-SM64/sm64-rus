@@ -2,7 +2,7 @@
 
 ![SM64EX - Русская версия](/md_screenshots/header.png)
 
-Super Mario 64 EX (SM64EX) - Русская версия. На основе https://github.com/sm64pc/sm64ex.
+Super Mario 64 EX (SM64EX) - Русская версия. Мод для https://github.com/sm64pc/sm64ex.
 
 ## Особенности русификации
 
