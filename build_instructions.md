@@ -204,7 +204,7 @@ apt update && apt upgrade
 apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils gcc-13 g++-13 gcc-13-x86-64-linux-gnu g++-13-x86-64-linux-gnu gcc-13-mips-linux-gnu
 ```
 
-5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#linux) снизу.
+5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#шаг-2---клонирование-репозиторий-1) снизу.
 
 6. Готовьтесь к выполнению сборки игры:
 ```sh
