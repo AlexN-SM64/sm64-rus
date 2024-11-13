@@ -187,6 +187,33 @@ wsl --install <дистрибутив>
 
 2. Перейдите [в раздел](#linux) снизу и продолжайте следовать инструкцию по выполнению сборки.
 
+### Android
+
+1. Установите терминал Termux на Android в [Google Play](https://play.google.com/store/apps/details?id=com.termux) или [F-Droid](https://f-droid.org/ru/packages/com.termux/) и запустите него.
+
+2. Дайте терминалу разрешение доступа к файлам или папкам из корневого хранилища:
+```sh
+termux-setup-storage
+```
+
+3. Установите дистрибутив Ubuntu в Termux, следуя инструкцию по ссылке: https://github.com/MFDGaming/ubuntu-in-termux
+
+4. Запустите Ubuntu в Termux и установите компоненты:
+```sh
+apt update && apt upgrade
+apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils gcc-13 g++-13 gcc-13-x86-64-linux-gnu g++-13-x86-64-linux-gnu gcc-13-mips-linux-gnu
+```
+
+5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#linux) снизу.
+
+6. Готовьтесь к выполнению сборки игры:
+```sh
+tools/apply_patch.sh enhancements/update_makefiles.patch
+make TARGET_N64=1 GRUCODE=f3dzex -j$(nproc)
+```
+
+В результате сборки ваша игра для N64 будет находиться там: `build/us/sm64.us.z64`. Потом не забудьте забрать её в хранилище.
+
 ### Linux
 
 Есть 5 шагов, чтобы выполнить совершенную рабочую сборку русифицированной игры для N64!
@@ -212,24 +239,17 @@ wsl --install <дистрибутив>
 
 Установите компоненты:
 ```sh
-sudo apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils
-```
-
-Важно: перед установкой компонентов не забудьте обновить список пакетов, введя `sudo apt update`.
-
-Примечание: Если вы хотите использовать GNU C Compiler (GCC) для выполнения сборки ROM, установите следующий дополнительный компонент:
-```sh
-sudo apt install gcc-mips-linux-gnu
+sudo apt update && sudo apt upgrade
+sudo apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils gcc-mips-linux-gnu
 ```
 
 ##### Arch Linux
 
 1. Установите компоненты:
 ```sh
+sudo pacman -Syu
 sudo pacman -S base-devel python capstone
 ```
-
-Важно: перед установкой компонентов не забудьте обновить их, введя `sudo pacman -Syu`.
 
 2. Понизьте версию GCC до 13.2:
 ```sh
