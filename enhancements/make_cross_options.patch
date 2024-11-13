@@ -1,38 +1,17 @@
 diff --git a/Makefile b/Makefile
-index cfac1e8..7bec59f 100644
+index cfac1e8..a931a4a 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -242,21 +242,23 @@ PYTHON := python3
+@@ -253,7 +253,7 @@ ifeq ($(filter clean distclean print-%,$(MAKECMDGOALS)),)
  
- ifeq ($(filter clean distclean print-%,$(MAKECMDGOALS)),)
- 
-+  # Make tools if out of date
-+  $(info Building tools...)
-+  DUMMY != $(MAKE) -s -C $(TOOLS_DIR) $(if $(filter-out ido0,$(COMPILER)$(USE_QEMU_IRIX)),all-except-recomp,) CROSS=$(CROSS_GENERAL) >&2 || echo FAIL
-+    ifeq ($(DUMMY),FAIL)
-+      $(error Failed to build tools)
-+    endif
-+
-   # Make sure assets exist
-   NOEXTRACT ?= 0
-   ifeq ($(NOEXTRACT),0)
-+    $(info Extracting assets...)
-     DUMMY != $(PYTHON) extract_assets.py $(VERSION) >&2 || echo FAIL
-     ifeq ($(DUMMY),FAIL)
-       $(error Failed to extract assets)
-     endif
-   endif
- 
--  # Make tools if out of date
--  $(info Building tools...)
+   # Make tools if out of date
+   $(info Building tools...)
 -  DUMMY != $(MAKE) -s -C $(TOOLS_DIR) $(if $(filter-out ido0,$(COMPILER)$(USE_QEMU_IRIX)),all-except-recomp,) >&2 || echo FAIL
--    ifeq ($(DUMMY),FAIL)
--      $(error Failed to build tools)
--    endif
-   $(info Building ROM...)
- 
- endif
-@@ -400,6 +402,8 @@ else ifneq ($(call find-command,mips64-linux-gnu-ld),)
++  DUMMY != $(MAKE) -s -C $(TOOLS_DIR) $(if $(filter-out ido0,$(COMPILER)$(USE_QEMU_IRIX)),all-except-recomp,) CROSS_GENERAL=$(CROSS_GENERAL) >&2 || echo FAIL
+     ifeq ($(DUMMY),FAIL)
+       $(error Failed to build tools)
+     endif
+@@ -400,6 +400,8 @@ else ifneq ($(call find-command,mips64-linux-gnu-ld),)
    CROSS := mips64-linux-gnu-
  else ifneq ($(call find-command,mips64-elf-ld),)
    CROSS := mips64-elf-
@@ -41,7 +20,7 @@ index cfac1e8..7bec59f 100644
  else
    $(error Unable to detect a suitable MIPS toolchain installed)
  endif
-@@ -429,7 +433,7 @@ TARGET_CFLAGS := -nostdinc -DTARGET_N64 -D_LANGUAGE_C
+@@ -429,7 +431,7 @@ TARGET_CFLAGS := -nostdinc -DTARGET_N64 -D_LANGUAGE_C
  CC_CFLAGS := -fno-builtin
  
  # Check code syntax with host compiler
@@ -50,7 +29,7 @@ index cfac1e8..7bec59f 100644
  CC_CHECK_CFLAGS := -fsyntax-only -fsigned-char $(CC_CFLAGS) $(TARGET_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(DEF_INC_CFLAGS)
  
  # C compiler options
-@@ -456,10 +460,10 @@ export LANG := C
+@@ -456,10 +458,10 @@ export LANG := C
  
  else # TARGET_N64
  
@@ -64,7 +43,7 @@ index cfac1e8..7bec59f 100644
  else
    CC := emcc
  endif
-@@ -468,8 +472,8 @@ ifeq ($(CXX_FILES),"")
+@@ -468,8 +470,8 @@ ifeq ($(CXX_FILES),"")
  else
    LD := $(CXX)
  endif
@@ -75,7 +54,7 @@ index cfac1e8..7bec59f 100644
  PYTHON := python3
  
  # Platform-specific compiler and linker flags
-@@ -530,7 +534,7 @@ ifneq (,$(call find-command,clang))
+@@ -530,7 +532,7 @@ ifneq (,$(call find-command,clang))
    CPP      := clang
    CPPFLAGS := -E -P -x c -Wno-trigraphs $(DEF_INC_CFLAGS)
  else
@@ -85,69 +64,35 @@ index cfac1e8..7bec59f 100644
  endif
  
 diff --git a/tools/Makefile b/tools/Makefile
-index 92a3916..ef05c21 100644
+index 92a3916..820a2ac 100644
 --- a/tools/Makefile
 +++ b/tools/Makefile
-@@ -1,10 +1,12 @@
- include ../util.mk
- 
-+CROSS ?= $(CROSS_GENERAL)
-+
+@@ -3,8 +3,8 @@ include ../util.mk
  HOST_ENV := $(shell uname 2>/dev/null || echo Unknown)
  HOST_ENV := $(patsubst MINGW%,MinGW,$(HOST_ENV))
  
 -CC           := gcc
 -CXX          := g++
-+CC           := $(CROSS)gcc
-+CXX          := $(CROSS)g++
++CC           := $(CROSS_GENERAL)gcc
++CXX          := $(CROSS_GENERAL)g++
  CFLAGS       := -I . -Wall -Wextra -Wno-unused-parameter -pedantic -O2 -s
  LDFLAGS      := -lm
  ALL_PROGRAMS := armips n64graphics n64graphics_ci mio0 n64cksum textconv patch_elf_32bit aifc_decode aiff_extract_codebook vadpcm_enc tabledesign extract_data_for_mio skyconv
-@@ -73,11 +75,11 @@ $(1): $($1_SOURCES)
- endef
- 
- ido5.3_recomp:
--	$(MAKE) -C ido5.3_recomp
-+	$(MAKE) -C ido5.3_recomp CROSS=$(CROSS_GENERAL)
- 
+@@ -78,6 +78,6 @@ ido5.3_recomp:
  $(foreach p,$(BUILD_PROGRAMS),$(eval $(call COMPILE,$(p))))
  
  $(LIBAUDIOFILE):
 -	@$(MAKE) -C audiofile
-+	@$(MAKE) -C audiofile CROSS=$(CROSS_GENERAL)
++	@$(MAKE) -C audiofile CROSS_GENERAL=$(CROSS_GENERAL)
  
  .PHONY: all all-except-recomp clean default ido5.3_recomp
 diff --git a/tools/audiofile/Makefile b/tools/audiofile/Makefile
-index ae7d1e0..ff58395 100644
+index ae7d1e0..2191b56 100644
 --- a/tools/audiofile/Makefile
 +++ b/tools/audiofile/Makefile
 @@ -1,4 +1,4 @@
 -CXX := g++
-+CXX := $(CROSS)g++
++CXX := $(CROSS_GENERAL)g++
  
  libaudiofile.a: audiofile.o
  	$(AR) rcs $@ $^
-diff --git a/tools/ido5.3_recomp/Makefile b/tools/ido5.3_recomp/Makefile
-index 84a5de3..388265a 100644
---- a/tools/ido5.3_recomp/Makefile
-+++ b/tools/ido5.3_recomp/Makefile
-@@ -1,3 +1,6 @@
-+CC           := $(CROSS)gcc
-+CXX          := $(CROSS)g++
-+
- IRIX_ROOT := ../ido5.3_compiler
- 
- cc: OPT_CFLAGS := -O2
-diff --git a/util.mk b/util.mk
-index 75af981..81fa7a8 100644
---- a/util.mk
-+++ b/util.mk
-@@ -14,3 +14,8 @@ endef
- 
- # Returns the path to the command $(1) if exists. Otherwise returns an empty string.
- find-command = $(shell which $(1) 2>/dev/null)
-+
-+# Selects the cross that packages are installed on it.
-+
-+CROSS_GENERAL ?= x86_64-linux-gnu-
-+CROSS_MIPS ?= mips-linux-gnu-
