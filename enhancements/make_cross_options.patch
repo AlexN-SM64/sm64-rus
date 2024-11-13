@@ -139,32 +139,15 @@ index 84a5de3..388265a 100644
  
  cc: OPT_CFLAGS := -O2
 diff --git a/util.mk b/util.mk
-index 75af981..a9e66cd 100644
+index 75af981..81fa7a8 100644
 --- a/util.mk
 +++ b/util.mk
-@@ -14,3 +14,25 @@ endef
+@@ -14,3 +14,8 @@ endef
  
  # Returns the path to the command $(1) if exists. Otherwise returns an empty string.
  find-command = $(shell which $(1) 2>/dev/null)
 +
 +# Selects the cross that packages are installed on it.
 +
-+CC_DUMPMACHINE  != gcc -dumpmachine || echo FAIL
-+CXX_DUMPMACHINE != g++ -dumpmachine || echo FAIL
-+CPP_DUMPMACHINE != cpp -dumpmachine || echo FAIL
-+
-+ifeq $(CC_DUMPMACHINE),FAIL)
 +CROSS_GENERAL ?= x86_64-linux-gnu-
-+else
-+ifeq $(CXX_DUMPMACHINE),FAIL)
-+CROSS_GENERAL ?= $(CC_DUMPMACHINE)-
-+else
-+ifeq $(CPP_DUMPMACHINE),FAIL)
-+CROSS_GENERAL ?= $(CXX_DUMPMACHINE)-
-+else
-+CROSS_GENERAL ?= $(CPP_DUMPMACHINE)-
-+endif
-+endif
-+endif
-+
 +CROSS_MIPS ?= mips-linux-gnu-
