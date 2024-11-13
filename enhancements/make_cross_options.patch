@@ -1,16 +1,7 @@
 diff --git a/Makefile b/Makefile
-index cfac1e8..a931a4a 100644
+index cfac1e8..06ff950 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -253,7 +253,7 @@ ifeq ($(filter clean distclean print-%,$(MAKECMDGOALS)),)
- 
-   # Make tools if out of date
-   $(info Building tools...)
--  DUMMY != $(MAKE) -s -C $(TOOLS_DIR) $(if $(filter-out ido0,$(COMPILER)$(USE_QEMU_IRIX)),all-except-recomp,) >&2 || echo FAIL
-+  DUMMY != $(MAKE) -s -C $(TOOLS_DIR) $(if $(filter-out ido0,$(COMPILER)$(USE_QEMU_IRIX)),all-except-recomp,) CROSS_GENERAL=$(CROSS_GENERAL) >&2 || echo FAIL
-     ifeq ($(DUMMY),FAIL)
-       $(error Failed to build tools)
-     endif
 @@ -400,6 +400,8 @@ else ifneq ($(call find-command,mips64-linux-gnu-ld),)
    CROSS := mips64-linux-gnu-
  else ifneq ($(call find-command,mips64-elf-ld),)
@@ -63,36 +54,3 @@ index cfac1e8..a931a4a 100644
    CPPFLAGS := -P -Wno-trigraphs $(DEF_INC_CFLAGS)
  endif
  
-diff --git a/tools/Makefile b/tools/Makefile
-index 92a3916..820a2ac 100644
---- a/tools/Makefile
-+++ b/tools/Makefile
-@@ -3,8 +3,8 @@ include ../util.mk
- HOST_ENV := $(shell uname 2>/dev/null || echo Unknown)
- HOST_ENV := $(patsubst MINGW%,MinGW,$(HOST_ENV))
- 
--CC           := gcc
--CXX          := g++
-+CC           := $(CROSS_GENERAL)gcc
-+CXX          := $(CROSS_GENERAL)g++
- CFLAGS       := -I . -Wall -Wextra -Wno-unused-parameter -pedantic -O2 -s
- LDFLAGS      := -lm
- ALL_PROGRAMS := armips n64graphics n64graphics_ci mio0 n64cksum textconv patch_elf_32bit aifc_decode aiff_extract_codebook vadpcm_enc tabledesign extract_data_for_mio skyconv
-@@ -78,6 +78,6 @@ ido5.3_recomp:
- $(foreach p,$(BUILD_PROGRAMS),$(eval $(call COMPILE,$(p))))
- 
- $(LIBAUDIOFILE):
--	@$(MAKE) -C audiofile
-+	@$(MAKE) -C audiofile CROSS_GENERAL=$(CROSS_GENERAL)
- 
- .PHONY: all all-except-recomp clean default ido5.3_recomp
-diff --git a/tools/audiofile/Makefile b/tools/audiofile/Makefile
-index ae7d1e0..2191b56 100644
---- a/tools/audiofile/Makefile
-+++ b/tools/audiofile/Makefile
-@@ -1,4 +1,4 @@
--CXX := g++
-+CXX := $(CROSS_GENERAL)g++
- 
- libaudiofile.a: audiofile.o
- 	$(AR) rcs $@ $^
