@@ -72,19 +72,17 @@ https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.
 
 Установите компоненты:
 ```sh
+sudo apt update && sudo apt upgrade
 sudo apt install git build-essential libusb-1.0-0-dev libsdl2-dev bsdextrautils
 ```
-
-Важно: перед установкой компонентов не забудьте обновить список пакетов, введя `sudo apt update`.
 
 #### Linux - Arch Linux
 
 1. Установите компоненты:
 ```sh
+sudo pacman -Syu
 sudo pacman -S base-devel python sdl2
 ```
-
-Важно: перед установкой компонентов не забудьте обновить их, введя `sudo pacman -Syu`.
 
 2. Понизьте версию GCC до 13.2:
 ```sh
@@ -201,7 +199,7 @@ termux-setup-storage
 4. Запустите Ubuntu в Termux и установите компоненты:
 ```sh
 apt update && apt upgrade
-apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils gcc-13 g++-13 gcc-13-x86-64-linux-gnu g++-13-x86-64-linux-gnu gcc-13-mips-linux-gnu
+apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils g++-13 g++-13-x86-64-linux-gnu gcc-13-mips-linux-gnu
 ```
 
 5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#шаг-2---клонирование-репозиторий-1) снизу.
@@ -240,7 +238,7 @@ make TARGET_N64=1 GRUCODE=f3dzex -j$(nproc)
 Установите компоненты:
 ```sh
 sudo apt update && sudo apt upgrade
-sudo apt install git build-essential python3 pkgconf libcapstone-dev binutils-mips-linux-gnu bsdextrautils gcc-mips-linux-gnu
+sudo apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils gcc-mips-linux-gnu
 ```
 
 ##### Arch Linux
