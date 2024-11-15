@@ -11,7 +11,7 @@
 Windows (MSYS2 UCRT64 / MSYS2 MinGW):
 
 * python3 >= 3.6
-* mingw-w64-gcc <= 13.2
+* mingw-w64-gcc
 
 Также требуется выполнение сборки игры с поддержкой OpenGL:
 
@@ -21,7 +21,7 @@ Windows (MSYS2 UCRT64 / MSYS2 MinGW):
 Linux:
 
 * python3 >= 3.6
-* gcc, g++ <= 13.2
+* gcc, g++
 * pkgconf
 * libusb-1.0
 * SDL2
@@ -35,38 +35,16 @@ Linux:
 
 Важно: Запуск MSYS2 требуется Windows 8.1 или новее для систем x64. После запуска сначала обновите терминал и пакеты, введя `pacman -Syu`. Потом не забудьте перезапустить заново и ввести ещё раз до окончания обновления.
 
-1. Установите базовые компоненты:
+Установите компоненты:
 ```sh
 # Установить только основные компоненты:
 pacman -S git make python3
 
 # Установить дополнительные компоненты, но требуется выполнение сборки игры с поддержкой OpenGL:
-pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-glew           # В MSYS2 MinGW 64-бит
-pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-glew               # В MSYS2 MinGW 32-бит
-pacman -S mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-glew # В MSYS2 UCRT64
+pacman -S mingw-w64-x86_64-gcc      mingw-w64-x86_64-SDL2      mingw-w64-x86_64-glew      # В MSYS2 MinGW 64-бит
+pacman -S mingw-w64-i686-gcc        mingw-w64-i686-SDL2        mingw-w64-i686-glew        # В MSYS2 MinGW 32-бит
+pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-glew # В MSYS2 UCRT64
 ```
-
-2. Установите необходимый GCC 13.2:
-* В MSYS2 UCRT64:
-```sh
-pacman -U \
-https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
-https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
-```
-* В MSYS2 MinGW 64-бит:
-```sh
-pacman -U \
-https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-6-any.pkg.tar.zst \
-https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-libs-13.2.0-6-any.pkg.tar.zst
-```
-* В MSYS2 MinGW 32-бит:
-```sh
-pacman -U \
-https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-13.2.0-6-any.pkg.tar.zst \
-https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-13.2.0-6-any.pkg.tar.zst
-```
-
-Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других компонентов используйте `pacman -Syu --ignore mingw-w64-ucrt-x86_64-gcc --ignore mingw-w64-ucrt-x86_64-gcc-libs --ignore mingw-w64-x86_64-gcc --ignore mingw-w64-x86_64-gcc-libs --ignore mingw-w64-i686-gcc --ignore mingw-w64-i686-gcc-libs`
 
 #### Linux - Debian / Ubuntu / Kali Linux
 
@@ -78,20 +56,11 @@ sudo apt install git build-essential libusb-1.0-0-dev libsdl2-dev bsdextrautils
 
 #### Linux - Arch Linux
 
-1. Установите компоненты:
+Установите компоненты:
 ```sh
 sudo pacman -Syu
 sudo pacman -S base-devel python sdl2
 ```
-
-2. Понизьте версию GCC до 13.2:
-```sh
-sudo pacman -U \
-https://archive.archlinux.org/packages/g/gcc/gcc-13.2.1-6-x86_64.pkg.tar.zst \
-https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.tar.zst
-```
-
-Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других компонентов используйте `sudo pacman -Syu --ignore gcc --ignore gcc-libs`
 
 #### Linux - Другие дистрибутивы
 
@@ -199,7 +168,7 @@ termux-setup-storage
 4. Запустите Ubuntu в Termux и установите компоненты:
 ```sh
 apt update && apt upgrade
-apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils g++-13 g++-13-x86-64-linux-gnu gcc-13-mips-linux-gnu
+apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils
 ```
 
 5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#шаг-2---клонирование-репозиторий-1) снизу.
@@ -221,7 +190,7 @@ make TARGET_N64=1 GRUCODE=f3dzex -j$(nproc)
 К системе сборки предъявляются следующие требования к компонентам:
 
 * python3 >= 3.6
-* gcc, g++ <= 13.2
+* gcc, g++
 * pkgconf
 * capstone
 * binutils-mips
@@ -229,7 +198,7 @@ make TARGET_N64=1 GRUCODE=f3dzex -j$(nproc)
 
 Для использования GCC вместо IDO:
 
-* gcc-mips <= 13.2
+* gcc-mips
 
 Инструкции по установке компонентов приведены ниже:
 
@@ -249,16 +218,7 @@ sudo pacman -Syu
 sudo pacman -S base-devel python capstone
 ```
 
-2. Понизьте версию GCC до 13.2:
-```sh
-sudo pacman -U \
-https://archive.archlinux.org/packages/g/gcc/gcc-13.2.1-6-x86_64.pkg.tar.zst \
-https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-13.2.1-6-x86_64.pkg.tar.zst
-```
-
-Важно: НЕ обновляйте GCC до версии 14 - выполнение сборки инструмента ARMIPS выдаёт ошибки. Для обновления других компонентов используйте `sudo pacman -Syu --ignore gcc --ignore gcc-libs`
-
-3. Установите следующие AUR-пакеты:
+2. Установите следующие AUR-пакеты:
 
 * [mips64-elf-binutils](https://aur.archlinux.org/packages/mips64-elf-binutils) (AUR)
 
