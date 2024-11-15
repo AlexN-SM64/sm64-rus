@@ -1,15 +1,13 @@
 diff --git a/Makefile b/Makefile
-index cfac1e8..5c27de2 100644
+index cfac1e8..39198a8 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -394,16 +394,31 @@ DEF_INC_CFLAGS := $(foreach i,$(INCLUDE_DIRS),-I$(i)) $(C_DEFINES)
+@@ -394,15 +394,34 @@ DEF_INC_CFLAGS := $(foreach i,$(INCLUDE_DIRS),-I$(i)) $(C_DEFINES)
  ifeq ($(TARGET_N64),1)
  
  # detect prefix for MIPS toolchain
--ifneq      ($(call find-command,mips-linux-gnu-ld),)
-+ifneq      ($(call find-command,$(MIPS_CROSS)-ld),)
-+  CROSS := $(MIPS_CROSS)-
-+else ifneq ($(call find-command,mips-linux-gnu-ld),)
++ifeq ($(MIPS_CROSS),)
+ ifneq      ($(call find-command,mips-linux-gnu-ld),)
    CROSS := mips-linux-gnu-
  else ifneq ($(call find-command,mips64-linux-gnu-ld),)
    CROSS := mips64-linux-gnu-
@@ -20,22 +18,26 @@ index cfac1e8..5c27de2 100644
  else
    $(error Unable to detect a suitable MIPS toolchain installed)
  endif
- 
++else
++CROSS := $(MIPS_CROSS)
++endif
++
 +# detect GCC for AMD64 or i386 architecture installed
-+ifneq      ($(call find-command,$(CC_CHECK_CROSS)-gcc),)
-+  CC_CHECK := $(CC_CHECK_CROSS)-gcc
-+else ifneq ($(call find-command,x86_64-linux-gnu-gcc),)
++ifeq ($(CC_CHECK_CROSS),)
++ifneq      ($(call find-command,x86_64-linux-gnu-gcc),)
 +  CC_CHECK := x86_64-linux-gnu-gcc
 +else ifneq ($(call find-command,i686-linux-gnu-gcc),)
 +  CC_CHECK := i686-linux-gnu-gcc
 +else
 +  $(error Unable to detect GCC for AMD64 or i386 architecture installed)
 +endif
-+
++else
++CC_CHECK := $(CC_CHECK_CROSS)gcc
++endif
+ 
  AS        := $(CROSS)as
  ifeq ($(COMPILER),gcc)
-   CC      := $(CROSS)gcc
-@@ -429,7 +444,6 @@ TARGET_CFLAGS := -nostdinc -DTARGET_N64 -D_LANGUAGE_C
+@@ -429,7 +448,6 @@ TARGET_CFLAGS := -nostdinc -DTARGET_N64 -D_LANGUAGE_C
  CC_CFLAGS := -fno-builtin
  
  # Check code syntax with host compiler
