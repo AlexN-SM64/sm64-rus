@@ -31,19 +31,17 @@ Linux:
 
 #### Windows - MSYS2 UCRT64 / MSYS2 MinGW
 
-Для того, чтобы приступить, вам необходимо установить и обновить [MSYS2](https://msys2.org). Потом перед установкой пакетов не забудьте запустить MSYS2 UCRT64 или MSYS2 MinGW.
+Для того, чтобы приступить, вам необходимо установить и обновить [MSYS2](https://msys2.org). Потом перед установкой пакетов не забудьте запустить MSYS2 UCRT64 или MSYS2 MinGW (64- или 32-бит).
 
 Важно: Запуск MSYS2 требуется Windows 8.1 или новее для систем x64. После запуска сначала обновите терминал и пакеты, введя `pacman -Syu`. Потом не забудьте перезапустить заново и ввести ещё раз до окончания обновления.
 
 Установите компоненты:
 ```sh
-# Установить только основные компоненты:
-pacman -S git make python3
+Установите основные компоненты:
+pacman -S git make python3 mingw-w64-x86_64-gcc mingw-w64-i686-gcc mingw-w64-ucrt-x86_64-gcc
 
-# Установить дополнительные компоненты, но требуется выполнение сборки игры с поддержкой OpenGL:
-pacman -S mingw-w64-x86_64-gcc      mingw-w64-x86_64-SDL2      mingw-w64-x86_64-glew      # В MSYS2 MinGW 64-бит
-pacman -S mingw-w64-i686-gcc        mingw-w64-i686-SDL2        mingw-w64-i686-glew        # В MSYS2 MinGW 32-бит
-pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-glew # В MSYS2 UCRT64
+Установите дополнительные компоненты, но требуется выполнение сборки игры для Windows с поддержкой OpenGL:
+pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-glew mingw-w64-i686-SDL2 mingw-w64-i686-glew mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-glew
 ```
 
 #### Linux - Debian / Ubuntu / Kali Linux
