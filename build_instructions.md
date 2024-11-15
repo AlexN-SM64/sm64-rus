@@ -166,7 +166,7 @@ termux-setup-storage
 4. Запустите Ubuntu в Termux и установите компоненты:
 ```sh
 apt update && apt upgrade
-apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils
+apt install git build-essential python3 pkgconf libcapstone-dev bsdextrautils gcc-mips-linux-gnu
 ```
 
 5. Перед выполнением сборки выполните шаги 2-4, перейдя [в раздел](#шаг-2---клонирование-репозиторий-1) снизу.
