@@ -1726,7 +1726,10 @@ s8 gDialogCourseActNum = 1;
 #ifdef VERSION_EU
 #define DIAG_VAL2 238
 #else
+#define DIAG_VAL2 237 //! ONLY IN RUSSIAN VERSION
+/*
 #define DIAG_VAL2 240 // JP & US
+*/
 #endif
 
 void render_dialog_entries(void) {
