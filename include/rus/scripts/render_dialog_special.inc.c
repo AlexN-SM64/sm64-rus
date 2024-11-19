@@ -1,15 +1,3 @@
-void change_dialog_position_y(s16 dialogID, RENDER_DIALOG_CHAR_OPTIONS_INITIALIZE) {
-	s16 dialogIDs[] = { DIALOG_008, DIALOG_161 };
-	f32 yPositions[] = { -3, -1 };
-	s16 i = 0;
-	while (dialogIDs[i] != dialogID) {
-		i += 1;
-	}
-	RENDER_DIALOG_CHAR_OPTIONS_START
-		create_dl_translation_matrix(MENU_MTX_NOPUSH, 0, yPositions[i], 0);
-	RENDER_DIALOG_CHAR_OPTIONS_END
-}
-
 void render_dialog_char_morpheme_count_rus(u8 letterIS, u8 letterRS, u8 letterRP, RENDER_DIALOG_CHAR_OPTIONS_INITIALIZE) {
 
     s8 tensDigit = gDialogVariable / 10;
